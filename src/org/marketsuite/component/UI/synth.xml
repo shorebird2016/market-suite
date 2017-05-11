@@ -1,0 +1,3560 @@
+<synth>
+
+<!-- 
+*******************************************************************************
+Defaults
+*******************************************************************************
+-->
+  <style id="default">
+    <object id="syntheticaGraphicsUtils" class="de.javasoft.plaf.synthetica.GraphicsUtils"/>
+    <graphicsUtils idref="syntheticaGraphicsUtils" />
+
+    <object id="syntheticaPainter" class="de.javasoft.plaf.synthetica.painter.SyntheticaPainter" />
+
+    <state>
+      <font id="SyntheticaDefaultFont" name="Tahoma" size="11"/>
+      <color type="FOREGROUND" value="#333333" /> 
+  	</state>
+
+  	<state value="DISABLED">
+  	  <color type="TEXT_FOREGROUND" value="#C0C0C0" />
+  	</state>
+   <defaultsProperty key="Synthetica.animation.enabled" type="boolean" value="false"/>
+   <defaultsProperty key="Synthetica.window.decoration" type="boolean" value="false"/>
+  </style>
+  <bind style="default" type="region" key=".*" />
+
+
+<!-- 
+*******************************************************************************
+ArrowButton
+*******************************************************************************
+-->
+  <style id="arrowButton">
+    <property key="ArrowButton.size" type="integer" value="18"/>
+
+    <state>
+      <!-- Background (Button) -->
+      <object class="java.lang.String" id="arrowButtonXBackground">
+        <string>/org/marketsuite/component/UI/images/arrowButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background" type="idref" value="arrowButtonXBackground"/>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.insets" type="insets" value="4 4 4 4"/>
+
+      <object class="java.lang.String" id="comboBoxButton">
+        <string>/org/marketsuite/component/UI/images/comboBoxButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.ComboBox.arrowButton" type="idref" value="comboBoxButton"/>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.insets.ComboBox.arrowButton" type="insets" value="4 4 4 4"/>
+
+      <object class="java.lang.String" id="comboBoxButtonLocked">
+        <string>/org/marketsuite/component/UI/images/comboBoxButton_locked.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.locked.ComboBox.arrowButton" type="idref" value="comboBoxButtonLocked"/>
+
+      <object class="java.lang.String" id="spinnerNextButton8x8">
+        <string>/org/marketsuite/component/UI/images/spinnerNextButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.Spinner.nextButton" type="idref" value="spinnerNextButton8x8"/>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.insets.Spinner.nextButton" type="insets" value="2 2 2 2"/>
+
+      <object class="java.lang.String" id="spinnerNextButton">
+        <string>/org/marketsuite/component/UI/images/spinnerNextButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.Spinner.nextButton" type="idref" value="spinnerNextButton"/>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.insets.Spinner.nextButton" type="insets" value="2 2 2 2"/>
+
+      <object class="java.lang.String" id="spinnerPreviousButton8x8">
+        <string>/org/marketsuite/component/UI/images/spinnerPreviousButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.Spinner.previousButton" type="idref" value="spinnerPreviousButton8x8"/>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.insets.Spinner.previousButton" type="insets" value="2 2 2 2"/>
+
+      <object class="java.lang.String" id="spinnerPreviousButton">
+        <string>/org/marketsuite/component/UI/images/spinnerPreviousButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.Spinner.previousButton" type="idref" value="spinnerPreviousButton"/>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.insets.Spinner.previousButton" type="insets" value="2 2 2 2"/>
+
+      <object class="java.lang.String" id="arrowButtonYBackground">
+        <string>/org/marketsuite/component/UI/images/arrowButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.y.background" type="idref" value="arrowButtonYBackground"/>
+      <defaultsProperty key="Synthetica.arrowButton.y.background.insets" type="insets" value="4 4 4 4"/>
+
+      <object class="java.lang.String" id="ArrowButton8x8Background">
+        <string>/org/marketsuite/component/UI/images/arrowButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background" type="idref" value="ArrowButton8x8Background"/>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.insets" type="insets" value="2 2 2 2"/>
+
+      <!-- Foreground (Arrow) -->
+      <object class="java.lang.String" id="arrowUp">
+        <string>/org/marketsuite/component/UI/images/arrowUp.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.up" type="idref" value="arrowUp"/>
+
+      <object class="java.lang.String" id="arrowDown">
+        <string>/org/marketsuite/component/UI/images/arrowDown.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.down" type="idref" value="arrowDown"/>
+
+      <object class="java.lang.String" id="arrowLeft">
+        <string>/org/marketsuite/component/UI/images/arrowLeft.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.left" type="idref" value="arrowLeft"/>
+
+      <object class="java.lang.String" id="arrowRight">
+        <string>/org/marketsuite/component/UI/images/arrowRight.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.right" type="idref" value="arrowRight"/>
+
+      <object class="java.lang.String" id="arrow8x8Up">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Up.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.up" type="idref" value="arrow8x8Up"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Up">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Up.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.up.SplitPaneDivider.leftOneTouchButton" type="idref" value="arrow8x8Up"/>
+
+      <object class="java.lang.String" id="arrow8x8Down">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Down.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.down" type="idref" value="arrow8x8Down"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Down">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Down.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.down.SplitPaneDivider.rightOneTouchButton" type="idref" value="arrow8x8Down"/>
+
+      <object class="java.lang.String" id="arrow8x8Left">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Left.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.left" type="idref" value="arrow8x8Left"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Left">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Left.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.left.SplitPaneDivider.leftOneTouchButton" type="idref" value="arrow8x8Left"/>
+
+      <object class="java.lang.String" id="arrow8x8Right">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Right.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.right" type="idref" value="arrow8x8Right"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Right">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Right.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.right.SplitPaneDivider.rightOneTouchButton" type="idref" value="arrow8x8Right"/>
+
+	  <painter method="arrowButtonBackground" idref="syntheticaPainter" />
+	  <painter method="arrowButtonForeground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="MOUSE_OVER">
+      <!-- Background (Button) -->
+      <object class="java.lang.String" id="arrowButtonXBackgroundHover">
+        <string>/org/marketsuite/component/UI/images/arrowButton_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.hover" type="idref" value="arrowButtonXBackgroundHover"/>
+
+      <object class="java.lang.String" id="arrowButtonYBackgroundHover">
+        <string>/org/marketsuite/component/UI/images/arrowButton_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.y.background.hover" type="idref" value="arrowButtonYBackgroundHover"/>
+
+      <object class="java.lang.String" id="ArrowButton8x8BackgroundHover">
+        <string>/org/marketsuite/component/UI/images/arrowButton_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.hover" type="idref" value="ArrowButton8x8BackgroundHover"/>
+
+      <object class="java.lang.String" id="comboBoxButtonHover">
+        <string>/org/marketsuite/component/UI/images/comboBoxButton_hoverLocked.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.hover.ComboBox.arrowButton" type="idref" value="comboBoxButtonHover"/>
+
+      <object class="java.lang.String" id="comboBoxButtonHoverLocked">
+        <string>/org/marketsuite/component/UI/images/comboBoxButton_hoverLocked.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.hover.locked.ComboBox.arrowButton" type="idref" value="comboBoxButtonHoverLocked"/>
+
+      <object class="java.lang.String" id="spinnerNextButtonHover8x8">
+        <string>/org/marketsuite/component/UI/images/spinnerNextButton_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.hover.Spinner.nextButton" type="idref" value="spinnerNextButtonHover8x8"/>
+
+      <object class="java.lang.String" id="spinnerNextButtonHover">
+        <string>/org/marketsuite/component/UI/images/spinnerNextButton_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.hover.Spinner.nextButton" type="idref" value="spinnerNextButtonHover"/>
+
+      <object class="java.lang.String" id="spinnerPreviousButtonHover8x8">
+        <string>/org/marketsuite/component/UI/images/spinnerPreviousButton_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.hover.Spinner.previousButton" type="idref" value="spinnerPreviousButtonHover8x8"/>
+
+      <object class="java.lang.String" id="spinnerPreviousButtonHover">
+        <string>/org/marketsuite/component/UI/images/spinnerPreviousButton_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.hover.Spinner.previousButton" type="idref" value="spinnerPreviousButtonHover"/>
+
+      <!-- Foreground (Arrow) -->
+      <object class="java.lang.String" id="arrowUpHover">
+        <string>/org/marketsuite/component/UI/images/arrowUp_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.up.hover" type="idref" value="arrowUpHover"/>
+
+      <object class="java.lang.String" id="arrowDownHover">
+        <string>/org/marketsuite/component/UI/images/arrowDown_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.down.hover" type="idref" value="arrowDownHover"/>
+
+      <object class="java.lang.String" id="arrowLeftHover">
+        <string>/org/marketsuite/component/UI/images/arrowLeft_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.left.hover" type="idref" value="arrowLeftHover"/>
+
+      <object class="java.lang.String" id="arrowRightHover">
+        <string>/org/marketsuite/component/UI/images/arrowRight_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.right.hover" type="idref" value="arrowRightHover"/>
+
+      <object class="java.lang.String" id="arrow8x8UpHover">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Up_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.up.hover" type="idref" value="arrow8x8UpHover"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Up">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Up_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.up.hover.SplitPaneDivider.leftOneTouchButton" type="idref" value="arrow8x8Up"/>
+
+      <object class="java.lang.String" id="arrow8x8DownHover">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Down_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.down.hover" type="idref" value="arrow8x8DownHover"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Down">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Down_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.down.hover.SplitPaneDivider.rightOneTouchButton" type="idref" value="arrow8x8Down"/>
+
+      <object class="java.lang.String" id="arrow8x8LeftHover">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Left_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.left.hover" type="idref" value="arrow8x8LeftHover"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Left">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Left_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.left.hover.SplitPaneDivider.leftOneTouchButton" type="idref" value="arrow8x8Left"/>
+
+      <object class="java.lang.String" id="arrow8x8RightHover">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Right_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.right.hover" type="idref" value="arrow8x8RightHover"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Right">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Right_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.right.hover.SplitPaneDivider.rightOneTouchButton" type="idref" value="arrow8x8Right"/>
+
+	  <painter method="arrowButtonBackground" idref="syntheticaPainter" />
+	  <painter method="arrowButtonForeground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="PRESSED">
+      <!-- Background (Button) -->
+      <object class="java.lang.String" id="arrowButtonXBackground">
+        <string>/org/marketsuite/component/UI/images/arrowButton_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.pressed" type="idref" value="arrowButtonXBackground"/>
+
+      <object class="java.lang.String" id="arrowButtonYBackground">
+        <string>/org/marketsuite/component/UI/images/arrowButton_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.y.background.pressed" type="idref" value="arrowButtonYBackground"/>
+
+      <object class="java.lang.String" id="arrowButton8x8BackgroundPressed">
+        <string>/org/marketsuite/component/UI/images/arrowButton_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.pressed" type="idref" value="arrowButton8x8BackgroundPressed"/>
+
+      <object class="java.lang.String" id="comboBoxButtonPressed">
+        <string>/org/marketsuite/component/UI/images/comboBoxButton_pressedLocked.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.pressed.ComboBox.arrowButton" type="idref" value="comboBoxButtonPressed"/>
+
+      <object class="java.lang.String" id="comboBoxButtonPressedLocked">
+        <string>/org/marketsuite/component/UI/images/comboBoxButton_pressedLocked.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.pressed.locked.ComboBox.arrowButton" type="idref" value="comboBoxButtonPressedLocked"/>
+
+      <object class="java.lang.String" id="spinnerNextButtonPressed8x8">
+        <string>/org/marketsuite/component/UI/images/spinnerNextButton_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.pressed.Spinner.nextButton" type="idref" value="spinnerNextButtonPressed8x8"/>
+
+      <object class="java.lang.String" id="spinnerNextButtonPressed">
+        <string>/org/marketsuite/component/UI/images/spinnerNextButton_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.pressed.Spinner.nextButton" type="idref" value="spinnerNextButtonPressed"/>
+
+      <object class="java.lang.String" id="spinnerPreviousButtonPressed8x8">
+        <string>/org/marketsuite/component/UI/images/spinnerPreviousButton_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.pressed.Spinner.previousButton" type="idref" value="spinnerPreviousButtonPressed8x8"/>
+
+      <object class="java.lang.String" id="spinnerPreviousButtonPressed">
+        <string>/org/marketsuite/component/UI/images/spinnerPreviousButton_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.pressed.Spinner.previousButton" type="idref" value="spinnerPreviousButtonPressed"/>
+
+      <!-- Foreground (Arrow) -->
+      <object class="java.lang.String" id="arrowUpPressed">
+        <string>/org/marketsuite/component/UI/images/arrowUp_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.up.pressed" type="idref" value="arrowUpPressed"/>
+
+      <object class="java.lang.String" id="arrowDownPressed">
+        <string>/org/marketsuite/component/UI/images/arrowDown_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.down.pressed" type="idref" value="arrowDownPressed"/>
+
+      <object class="java.lang.String" id="arrowLeftPressed">
+        <string>/org/marketsuite/component/UI/images/arrowLeft_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.left.pressed" type="idref" value="arrowLeftPressed"/>
+
+      <object class="java.lang.String" id="arrowRightPressed">
+        <string>/org/marketsuite/component/UI/images/arrowRight_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.right.pressed" type="idref" value="arrowRightPressed"/>
+
+      <object class="java.lang.String" id="arrow8x8UpPressed">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Up_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.up.pressed" type="idref" value="arrow8x8UpPressed"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Up">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Up_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.up.pressed.SplitPaneDivider.leftOneTouchButton" type="idref" value="arrow8x8Up"/>
+
+      <object class="java.lang.String" id="arrow8x8DownPressed">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Down_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.down.pressed" type="idref" value="arrow8x8DownPressed"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Down">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Down_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.down.pressed.SplitPaneDivider.rightOneTouchButton" type="idref" value="arrow8x8Down"/>
+
+      <object class="java.lang.String" id="arrow8x8LeftPressed">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Left_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.left.pressed" type="idref" value="arrow8x8LeftPressed"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Left">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Left_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.left.pressed.SplitPaneDivider.leftOneTouchButton" type="idref" value="arrow8x8Left"/>
+
+      <object class="java.lang.String" id="arrow8x8RightPressed">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Right_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.right.pressed" type="idref" value="arrow8x8RightPressed"/>
+
+      <object class="java.lang.String" id="splitPaneArrow8x8Right">
+        <string>/org/marketsuite/component/UI/images/splitPaneArrow8x8Right_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.right.pressed.SplitPaneDivider.rightOneTouchButton" type="idref" value="arrow8x8Right"/>
+
+	  <painter method="arrowButtonBackground" idref="syntheticaPainter" />
+	  <painter method="arrowButtonForeground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+      <!-- Background (Button) -->
+      <object class="java.lang.String" id="arrowButtonXBackground">
+        <string>/org/marketsuite/component/UI/images/arrowButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.disabled" type="idref" value="arrowButtonXBackground"/>
+
+      <object class="java.lang.String" id="comboBoxButton">
+        <string>/org/marketsuite/component/UI/images/comboBoxButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.x.background.disabled.ComboBox.arrowButton" type="idref" value="comboBoxButton"/>
+
+      <object class="java.lang.String" id="spinnerNextButtonDisabled">
+        <string>/org/marketsuite/component/UI/images/spinnerNextButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.disabled.Spinner.nextButton" type="idref" value="spinnerNextButtonDisabled"/>
+
+      <object class="java.lang.String" id="spinnerPreviousButtonDisabled">
+        <string>/org/marketsuite/component/UI/images/spinnerPreviousButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.disabled.Spinner.previousButton" type="idref" value="spinnerPreviousButtonDisabled"/>
+
+      <object class="java.lang.String" id="arrowButtonYBackground">
+        <string>/org/marketsuite/component/UI/images/arrowButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.y.background.disabled" type="idref" value="arrowButtonYBackground"/>
+
+      <object class="java.lang.String" id="arrowButton8x8BackgroundDisabled">
+        <string>/org/marketsuite/component/UI/images/arrowButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrowButton.8x8.background.disabled" type="idref" value="arrowButton8x8BackgroundDisabled"/>
+
+      <!-- Foreground (Arrow) -->
+      <object class="java.lang.String" id="arrowUpDisabled">
+        <string>/org/marketsuite/component/UI/images/arrowUp_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.up.disabled" type="idref" value="arrowUpDisabled"/>
+
+      <object class="java.lang.String" id="arrowDownDisabled">
+        <string>/org/marketsuite/component/UI/images/arrowDown_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.down.disabled" type="idref" value="arrowDownDisabled"/>
+
+      <object class="java.lang.String" id="arrowLeftDisabled">
+        <string>/org/marketsuite/component/UI/images/arrowLeft_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.left.disabled" type="idref" value="arrowLeftDisabled"/>
+
+      <object class="java.lang.String" id="arrowRightDisabled">
+        <string>/org/marketsuite/component/UI/images/arrowRight_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.right.disabled" type="idref" value="arrowRightDisabled"/>
+
+      <object class="java.lang.String" id="arrow8x8UpDisabled">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Up_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.up.disabled" type="idref" value="arrow8x8UpDisabled"/>
+
+      <object class="java.lang.String" id="arrow8x8DownDisabled">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Down_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.down.disabled" type="idref" value="arrow8x8DownDisabled"/>
+
+      <object class="java.lang.String" id="arrow8x8LeftDisabled">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Left_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.left.disabled" type="idref" value="arrow8x8LeftDisabled"/>
+
+      <object class="java.lang.String" id="arrow8x8RightDisabled">
+        <string>/org/marketsuite/component/UI/images/arrow8x8Right_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.arrow.8x8.right.disabled" type="idref" value="arrow8x8RightDisabled"/>
+
+	  <painter method="arrowButtonBackground" idref="syntheticaPainter" />
+	  <painter method="arrowButtonForeground" idref="syntheticaPainter" />
+    </state>
+
+  </style>
+  <bind style="arrowButton" type="region" key="ArrowButton"/>
+
+
+<!-- 
+*******************************************************************************
+Button
+*******************************************************************************
+-->
+  <style id="button">
+    <property key="Button.textShiftOffset" type="integer" value="1"/>
+
+    <state>
+      <insets top="7" left="5" bottom="5" right="5"/>
+      <property key="Button.margin" type="insets" value="0 10 0 10"/>
+      <font name="Tahoma" size="11" style="BOLD"/>
+      <color type="FOREGROUND" value="#333333" /> 
+
+      <defaultsProperty key="Synthetica.button.border.insets" type="insets" value="5 5 5 5"/>
+      <defaultsProperty key="Synthetica.button.12x12.border.insets" type="insets" value="4 4 4 4"/>
+
+      <object class="java.lang.String" id="buttonBorder">
+        <string>/org/marketsuite/component/UI/images/button.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.border" type="idref" value="buttonBorder"/>
+      <defaultsProperty key="Synthetica.button.animation.cycles" type="integer" value="1"/>
+      <defaultsProperty key="Synthetica.button.animation.hoverOut" type="boolean" value="true"/>
+
+      <object class="java.lang.String" id="buttonBorder12x12">
+        <string>/org/marketsuite/component/UI/images/button12x12.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.12x12.border" type="idref" value="buttonBorder12x12"/>
+
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="MOUSE_OVER">
+      <object class="java.lang.String" id="buttonBorderHover">
+        <string>/org/marketsuite/component/UI/images/button_hover4.png</string>
+      </object> 
+      <defaultsProperty key="Synthetica.button.border.hover" type="idref" value="buttonBorderHover"/>
+
+      <object class="java.lang.String" id="buttonBorder12x12Hover">
+        <string>/org/marketsuite/component/UI/images/button12x12_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.12x12.border.hover" type="idref" value="buttonBorder12x12Hover"/>
+
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="FOCUSED">
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="PRESSED">
+      <object class="java.lang.String" id="buttonBorderPressed">
+        <string>/org/marketsuite/component/UI/images/button_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.border.pressed" type="idref" value="buttonBorderPressed"/>
+
+      <object class="java.lang.String" id="buttonBorder12x12Pressed">
+        <string>/org/marketsuite/component/UI/images/button12x12_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.12x12.border.pressed" type="idref" value="buttonBorder12x12Pressed"/>
+
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DEFAULT">
+      <object class="java.lang.String" id="buttonBorder">
+        <string>/org/marketsuite/component/UI/images/button_default.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.border.default" type="idref" value="buttonBorder"/>
+      <defaultsProperty key="Synthetica.button.default.animation.delay" type="integer" value="150"/>
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+      <object class="java.lang.String" id="buttonBorderDisabled">
+        <string>/org/marketsuite/component/UI/images/button_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.border.disabled" type="idref" value="buttonBorderDisabled"/>
+
+      <object class="java.lang.String" id="buttonBorder12x12Disabled">
+        <string>/org/marketsuite/component/UI/images/button12x12_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.12x12.border.disabled" type="idref" value="buttonBorder12x12Disabled"/>
+
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="FOCUSED AND MOUSE_OVER">
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="FOCUSED AND PRESSED">
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DEFAULT AND FOCUSED">
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DEFAULT AND PRESSED">
+	  <imagePainter method="buttonBackground" path="/org/marketsuite/component/UI/images/button_defaultPressed.png"
+                    sourceInsets="5 5 5 5" paintCenter="true" stretch="true"/>
+    </state>
+
+    <state value="DEFAULT AND MOUSE_OVER">
+      <object class="java.lang.String" id="buttonBorder">
+        <string>/org/marketsuite/component/UI/images/button_defaultHover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.border.default.hover" type="idref" value="buttonBorder"/>
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state> 
+
+    <state value="DEFAULT AND DISABLED">
+      <color type="TEXT_FOREGROUND" value="#C0C0C0"/>
+	  <imagePainter method="buttonBackground" path="/org/marketsuite/component/UI/images/button_disabled.png"
+                    sourceInsets="5 5 5 5" paintCenter="true" stretch="true"/>
+    </state>
+
+    <state value="DEFAULT AND PRESSED AND FOCUSED">
+      <object class="java.lang.String" id="buttonBorder">
+        <string>/org/marketsuite/component/UI/images/button_defaultPressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.button.border.default.pressed" type="idref" value="buttonBorder"/>
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DEFAULT AND MOUSE_OVER AND FOCUSED">
+	  <painter method="buttonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED AND PRESSED">
+      <imagePainter method="buttonBackground" path="/org/marketsuite/component/UI/images/button_disabledPressed.png"
+                    sourceInsets="5 5 5 5" paintCenter="true" stretch="true"/>
+    </state>
+
+  </style>
+  <bind style="button" type="region" key="Button"/>
+
+
+<!-- 
+*******************************************************************************
+CheckBox
+*******************************************************************************
+-->
+  <style id="checkBox">
+    <insets top="4" left="4" bottom="4" right="4"/>
+    <imageIcon id="checkBoxDefault" path="/org/marketsuite/component/UI/images/dummy.png"/>
+
+    <state>
+      <property key="CheckBox.icon" value="checkBoxDefault"/>
+      <opaque value="true"/>
+
+      <object class="java.lang.String" id="checkBoxImage">
+        <string>/org/marketsuite/component/UI/images/checkBox.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.checkBox.image" type="idref" value="checkBoxImage"/>
+
+      <object class="java.lang.String" id="checkBoxBorder">
+        <string>/org/marketsuite/component/UI/images/checkBoxBorder.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.checkBox.border" type="idref" value="checkBoxBorder"/>
+      <defaultsProperty key="Synthetica.checkBox.border.insets" type="insets" value="2 2 2 2"/>
+	  <painter method="checkBoxBorder" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">
+      <object class="java.lang.String" id="checkBoxImage">
+        <string>/org/marketsuite/component/UI/images/checkBox_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.checkBox.selected.image" type="idref" value="checkBoxImage"/>
+	</state>
+
+    <state value="PRESSED">
+      <object class="java.lang.String" id="checkBoxPressed">
+        <string>/org/marketsuite/component/UI/images/checkBox_hoverSelected4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.checkBox.pressed.image" type="idref" value="checkBoxPressed"/>
+      <object class="java.lang.String" id="checkBoxPressedSelected">
+        <string>/org/marketsuite/component/UI/images/checkBox_hoverSelected4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.checkBox.pressed.selected.image" type="idref" value="checkBoxPressedSelected"/>
+	</state>
+
+    <state value="MOUSE_OVER">
+      <object class="java.lang.String" id="checkBoxImage">
+        <string>/org/marketsuite/component/UI/images/checkBox_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.checkBox.hover.image" type="idref" value="checkBoxImage"/>
+	</state>
+
+    <state value="MOUSE_OVER AND SELECTED">
+      <object class="java.lang.String" id="checkBoxImage">
+        <string>/org/marketsuite/component/UI/images/checkBox_hoverSelected4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.checkBox.hover.selected.image" type="idref" value="checkBoxImage"/>
+	</state>
+
+    <state value="FOCUSED">
+	  <painter method="checkBoxBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+  	  <color type="TEXT_FOREGROUND" value="#AAAAAA" /> 
+      <object class="java.lang.String" id="checkBoxImage">
+        <string>/org/marketsuite/component/UI/images/checkBox_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.checkBox.disabled.image" type="idref" value="checkBoxImage"/>
+	</state>
+
+    <state value="DISABLED AND SELECTED">
+  	  <color type="TEXT_FOREGROUND" value="#AAAAAA" /> 
+      <object class="java.lang.String" id="checkBoxImage">
+        <string>/org/marketsuite/component/UI/images/checkBox_disabledSelected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.checkBox.disabled.selected.image" type="idref" value="checkBoxImage"/>
+	</state>
+
+  </style>
+  <bind style="checkBox" type="region" key="CheckBox"/>	 
+
+
+<!-- 
+*******************************************************************************
+ComboBox
+Note: editable ComboBox contains TextField and ArrowButton
+      non editable ComboBox contains Label and ArrowButton
+*******************************************************************************
+-->
+  <style id="comboBox">
+    <insets top="2" left="2" bottom="2" right="2"/>
+
+    <state>
+      <color value="#FFFFFF" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="lockedTextColor">
+        <!-- #333333 -->
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.locked.textColor" type="idref" value="lockedTextColor"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="lockedBackgroundColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.locked.backgroundColor" type="idref" value="lockedBackgroundColor"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="lockedColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.lockedColor" type="idref" value="lockedColor"/>
+
+      <object class="java.lang.String" id="comboBoxBorder">
+        <string>/org/marketsuite/component/UI/images/border.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.border" type="idref" value="comboBoxBorder"/>
+      
+      <defaultsProperty key="Synthetica.comboBox.border.insets" type="insets" value="4 4 4 4"/>
+      <defaultsProperty key="Synthetica.comboBox.border.opaqueBackground" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.comboBox.border.disabled.opaqueBackground" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.comboBox.hoverAndPressed.enabled" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.comboBox.stateChange4ButtonOnly" type="boolean" value="true"/>
+
+      <object class="java.lang.String" id="comboBoxBorderLocked">
+        <string>/org/marketsuite/component/UI/images/border_locked.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.border.locked" type="idref" value="comboBoxBorderLocked"/>
+
+      <object class="java.lang.String" id="comboBoxBorderHover">
+        <string>/org/marketsuite/component/UI/images/comboBox_hoverLocked4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.border.hover" type="idref" value="comboBoxBorderHover"/>
+
+      <object class="java.lang.String" id="comboBoxBorderPressed">
+        <string>/org/marketsuite/component/UI/images/comboBox_hoverLocked4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.border.pressed" type="idref" value="comboBoxBorderPressed"/>
+
+      <object class="java.lang.String" id="comboBoxBorderHoverLocked">
+        <string>/org/marketsuite/component/UI/images/comboBox_hoverLocked4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.border.hover.locked" type="idref" value="comboBoxBorderHoverLocked"/>
+
+      <object class="java.lang.String" id="comboBoxBorderPressedLocked">
+        <string>/org/marketsuite/component/UI/images/comboBox_hoverLocked4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.border.pressed.locked" type="idref" value="comboBoxBorderPressedLocked"/>
+
+	  <painter method="comboBoxBorder" idref="syntheticaPainter" />
+	  <painter method="comboBoxBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="FOCUSED">
+      <object class="javax.swing.plaf.ColorUIResource" id="focusedTextColor">
+        <!-- #333333 -->
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.focused.textColor" type="idref" value="focusedTextColor"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="focusedBackgroundColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.focused.backgroundColor" type="idref" value="focusedBackgroundColor"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="focusedColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.focusedColor" type="idref" value="focusedColor"/>
+
+	  <painter method="comboBoxBorder" idref="syntheticaPainter" />
+	  <painter method="comboBoxBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+      <object class="java.lang.String" id="comboBoxBorderDisabled">
+        <string>/org/marketsuite/component/UI/images/border_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.border.disabled" type="idref" value="comboBoxBorderDisabled"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="disabledTextColor">
+        <!-- #C0C0C0 -->
+        <int>192</int>
+        <int>192</int>
+        <int>192</int>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.disabled.textColor" type="idref" value="disabledTextColor"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="disabledBackgroundColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.disabled.backgroundColor" type="idref" value="disabledBackgroundColor"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="disabledColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.comboBox.disabledColor" type="idref" value="disabledColor"/>
+
+	  <painter method="comboBoxBorder" idref="syntheticaPainter" />
+	  <painter method="comboBoxBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="comboBox" type="region" key="ComboBox"/>
+
+
+<!-- 
+*******************************************************************************
+DesktopIcon
+*******************************************************************************
+-->
+  <style id="desktopIcon">
+    <state>
+      <color type="BACKGROUND" value="#EEEDE5" />
+      <color type="TEXT_FOREGROUND" value="#EE0000" />
+    </state>
+  </style>
+  <bind style="desktopIcon" type="region" key="DesktopIcon"/>
+
+
+<!-- 
+*******************************************************************************
+DesktopPane
+*******************************************************************************
+-->
+  <style id="desktopPane">
+    <state>
+      <opaque value="true" />
+      <object class="java.lang.String" id="desktopPaneBackground">
+        <string>/org/marketsuite/component/UI/images/desktopPaneBackground.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.desktopPane.background" type="idref" value="desktopPaneBackground"/>
+      <defaultsProperty key="Synthetica.desktopPane.background.insets" type="insets" value="300 2 0 2"/>
+
+	  <painter method="desktopPaneBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="desktopPane" type="region" key="DesktopPane"/>
+
+
+<!-- 
+*******************************************************************************
+EditorPane
+*******************************************************************************
+-->
+  <style id="editorPane">
+    <state>
+      <color value="#FFFFFF" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="lockedColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.editorPane.lockedColor" type="idref" value="lockedColor"/>
+      <defaultsProperty key="Synthetica.editorPane.border.opaqueBackground" type="boolean" value="false"/>
+      <defaultsProperty key="Synthetica.editorPane.border.disabled.opaqueBackground" type="boolean" value="false"/>
+      <defaultsProperty key="Synthetica.editorPane.border.locked.opaqueBackground" type="boolean" value="false"/>
+
+      <object class="java.lang.String" id="editorPaneBorderLocked">
+        <string>/org/marketsuite/component/UI/images/border_locked_.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.editorPane.border.locked" type="idref" value="editorPaneBorderLocked"/>
+
+	  <painter method="editorPaneBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">
+  <!--
+    <color type="TEXT_BACKGROUND" value="#CCF0FF" />
+     --> <color
+    type="TEXT_BACKGROUND" value="#3DB4BE" /> <color
+    type="TEXT_FOREGROUND" value="#333333" /> </state> <state
+    value="DISABLED"> <color value="#F3F3F3" type="BACKGROUND"/> <object
+    class="javax.swing.plaf.ColorUIResource" id="disabledColor"> <!--
+    #F3F3F3
+  -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.editorPane.disabledColor" type="idref" value="disabledColor"/>
+	  <painter method="editorPaneBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="editorPane" type="region" key="EditorPane"/>
+
+
+<!-- 
+*******************************************************************************
+FileChooser
+*******************************************************************************
+-->
+  <style id="fileChooser">
+    <insets top="10" left="10" bottom="10" right="10"/>
+    <imageIcon id="directoryIcon" path="/org/marketsuite/component/UI/images/folderClosedIcon.png"/>
+    <imageIcon id="fileIcon" path="/org/marketsuite/component/UI/images/treeLeafIcon.png"/>
+    <imageIcon id="computerIcon" path="standard/images/computerIcon.png"/>
+    <imageIcon id="hardDriveIcon" path="standard/images/hardDriveIcon.png"/>
+    <imageIcon id="floppyDriveIcon" path="standard/images/floppyDriveIcon.png"/>
+    <imageIcon id="newFolderIcon" path="/org/marketsuite/component/UI/images/newFolderIcon.png"/>
+    <imageIcon id="upFolderIcon" path="/org/marketsuite/component/UI/images/upFolderIcon.png"/>
+    <imageIcon id="homeFolderIcon" path="/org/marketsuite/component/UI/images/homeFolderIcon.png"/>
+    <imageIcon id="detailsViewIcon" path="/org/marketsuite/component/UI/images/detailsViewIcon.png"/>
+    <imageIcon id="listViewIcon" path="/org/marketsuite/component/UI/images/listViewIcon.png"/>
+    <defaultsProperty key="FileView.directoryIcon" type="idref" value="directoryIcon"/>
+    <defaultsProperty key="FileView.fileIcon" type="idref" value="fileIcon"/>
+    <defaultsProperty key="FileView.computerIcon" type="idref" value="computerIcon"/>
+    <defaultsProperty key="FileView.hardDriveIcon" type="idref" value="hardDriveIcon"/>
+    <defaultsProperty key="FileView.floppyDriveIcon" type="idref" value="floppyDriveIcon"/>
+    <defaultsProperty key="FileChooser.newFolderIcon" type="idref" value="newFolderIcon"/>
+    <defaultsProperty key="FileChooser.upFolderIcon" type="idref" value="upFolderIcon"/>
+    <defaultsProperty key="FileChooser.homeFolderIcon" type="idref" value="homeFolderIcon"/>
+    <defaultsProperty key="FileChooser.detailsViewIcon" type="idref" value="detailsViewIcon"/>
+    <defaultsProperty key="FileChooser.listViewIcon" type="idref" value="listViewIcon"/>
+
+    <defaultsProperty key="Synthetica.extendedFileChooser.enabled" type="boolean" value="false"/>
+    <defaultsProperty key="Synthetica.extendedFileChooser.rememberPreferences" type="boolean" value="true"/>
+    <defaultsProperty key="Synthetica.extendedFileChooser.useSystemFileIcons" type="boolean" value="true"/>
+
+    <object class="java.lang.String" id="arrowUp">
+      <string>/org/marketsuite/component/UI/images/arrowUp.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.fileChooser.tableView.arrowUp" type="idref" value="arrowUp"/>
+
+    <object class="java.lang.String" id="arrowDown">
+      <string>/org/marketsuite/component/UI/images/arrowDown.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.fileChooser.tableView.arrowDown" type="idref" value="arrowDown"/>
+
+    <object class="javax.swing.plaf.ColorUIResource" id="sortColumnColor">
+      <!-- #F4F4F4 -->
+      <int>244</int>
+      <int>244</int>
+      <int>244</int>
+    </object>
+    <defaultsProperty key="Synthetica.fileChooser.tableView.sortColumnColor" type="idref" value="sortColumnColor"/>
+
+    <defaultsProperty key="Synthetica.fileOperationDialog.title.size" type="integer" value="20"/>
+    <object class="javax.swing.plaf.ColorUIResource" id="titleColor">
+      <!-- #505050 -->
+      <int>80</int>
+      <int>80</int>
+      <int>80</int>
+    </object>
+    <defaultsProperty key="Synthetica.fileOperationDialog.title.color" type="idref" value="titleColor"/>
+    <defaultsProperty key="Synthetica.fileOperationDialog.title.xPos" type="integer" value="10"/>
+    <defaultsProperty key="Synthetica.fileOperationDialog.title.yPos" type="integer" value="30"/>
+
+    <object class="java.lang.String" id="copyBackground">
+      <string>/org/marketsuite/component/UI/images/copyOperationDialog.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.fileOperationDialog.title.copyBackground" type="idref" value="copyBackground"/>
+
+    <object class="java.lang.String" id="moveBackground">
+      <string>/org/marketsuite/component/UI/images/moveOperationDialog.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.fileOperationDialog.title.moveBackground" type="idref" value="moveBackground"/>
+
+    <object class="java.lang.String" id="deleteBackground">
+      <string>/org/marketsuite/component/UI/images/deleteOperationDialog.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.fileOperationDialog.title.deleteBackground" type="idref" value="deleteBackground"/>
+
+    <defaultsProperty key="Synthetica.filePropertiesDialog.title.size" type="integer" value="20"/>
+    <object class="javax.swing.plaf.ColorUIResource" id="propertiesTitleColor">
+      <!-- #505050 -->
+      <int>80</int>
+      <int>80</int>
+      <int>80</int>
+    </object>
+    <defaultsProperty key="Synthetica.filePropertiesDialog.title.color" type="idref" value="propertiesTitleColor"/>
+    <defaultsProperty key="Synthetica.filePropertiesDialog.title.xPos" type="integer" value="10"/>
+    <defaultsProperty key="Synthetica.filePropertiesDialog.title.yPos" type="integer" value="27"/>
+
+    <object class="java.lang.String" id="propertiesBackground">
+      <string>/org/marketsuite/component/UI/images/filePropertiesDialog.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.filePropertiesDialog.title.background" type="idref" value="propertiesBackground"/>
+
+  </style>
+  <bind style="fileChooser" type="region" key="FileChooser"/>
+
+
+<!-- 
+*******************************************************************************
+Flexdock
+*******************************************************************************
+-->
+
+  <object class="java.lang.String" id="flexdockTitlebarBackground">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/flexdock.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.background" type="idref" value="flexdockTitlebarBackground"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarBackgroundSelected">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/flexdock_selected.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.background.selected" type="idref" value="flexdockTitlebarBackgroundSelected"/>
+
+  <defaultsProperty key="Synthetica.flexdock.titlebar.insets" type="insets" value="4 4 4 4"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="flexdockTitlebarColor">
+    <!-- #606060 -->
+    <int>96</int>
+    <int>96</int>
+    <int>96</int>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.color" type="idref" value="flexdockTitlebarColor" />
+
+  <object class="javax.swing.plaf.ColorUIResource" id="flexdockTitlebarColorSelected">
+    <!-- #333333 -->
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.color.selected" type="idref" value="flexdockTitlebarColorSelected" />
+
+  <object class="java.lang.String" id="flexdockTitlebarFontStyle">
+    <string>PLAIN</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.font.style" type="idref" value="flexdockTitlebarFontStyle"/>  
+
+  <object class="javax.swing.plaf.ColorUIResource" id="flexdockBorderColor">
+    <!-- #A0A0A0 -->
+    <int>160</int>
+    <int>160</int>
+    <int>160</int>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.border.color" type="idref" value="flexdockBorderColor"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarClose">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/flexdockCloseIcon.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.close" type="idref" value="flexdockTitlebarClose"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarCloseHover">
+    <string>/de/javasoft/plaf/synthetica/whitevision//images/internalFrameCloseIcon_hover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.close.hover" type="idref" value="flexdockTitlebarCloseHover"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarActiveClose">
+    <string>/org/marketsuite/component/UI/images/internalFrameCloseIcon.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.active.close" type="idref" value="flexdockTitlebarActiveClose"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarActiveCloseHover">
+    <string>/org/marketsuite/component/UI/images/internalFrameCloseIcon_hover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.active.close.hover" type="idref" value="flexdockTitlebarActiveCloseHover"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarPin">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/flexdockIconifyIcon.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.pin" type="idref" value="flexdockTitlebarPin"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarPinHover">
+    <string>/org/marketsuite/component/UI/images/internalFrameIconifyIcon_hover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.pin.hover" type="idref" value="flexdockTitlebarPinHover"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarActivePin">
+    <string>/org/marketsuite/component/UI/images/internalFrameIconifyIcon.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.active.pin" type="idref" value="flexdockTitlebarActivePin"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarActivePinHover">
+    <string>/org/marketsuite/component/UI/images/internalFrameIconifyIcon_hover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.active.pin.hover" type="idref" value="flexdockTitlebarActivePinHover"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarPinDocked">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/flexdockMinimizeIcon.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.pin.docked" type="idref" value="flexdockTitlebarPinDocked"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarPinDockedHover">
+    <string>/org/marketsuite/component/UI/images/internalFrameMinimizeIcon_hover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.pin.docked.hover" type="idref" value="flexdockTitlebarPinDockedHover"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarActivePinDocked">
+    <string>/org/marketsuite/component/UI/images/internalFrameMinimizeIcon.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.active.pin.docked" type="idref" value="flexdockTitlebarActivePinDocked"/>
+
+  <object class="java.lang.String" id="flexdockTitlebarActivePinDockedHover">
+    <string>/org/marketsuite/component/UI/images/internalFrameMinimizeIcon_hover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.flexdock.titlebar.active.pin.docked.hover" type="idref" value="flexdockTitlebarActivePinDockedHover"/>
+
+
+<!-- 
+*******************************************************************************
+Focus
+*******************************************************************************
+-->
+  <!-- default focus -->
+  <object class="java.lang.String" id="focus">
+    <string>/org/marketsuite/component/UI/images/focus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus" type="idref" value="focus"/>
+  <defaultsProperty key="Synthetica.focus.insets" type="insets" value="3 3 3 3"/>
+
+  <object class="java.lang.String" id="focusButton">
+    <string>/org/marketsuite/component/UI/images/focus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus.button" type="idref" value="focusButton"/>
+  <defaultsProperty key="Synthetica.focus.button.insets" type="insets" value="3 3 3 3"/>
+
+  <object class="java.lang.String" id="focusToggleButton">
+    <string>/org/marketsuite/component/UI/images/focus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus.toggleButton" type="idref" value="focusToggleButton"/>
+  <defaultsProperty key="Synthetica.focus.toggleButton.insets" type="insets" value="3 3 3 3"/>
+
+  <object class="java.lang.String" id="focusSlider">
+    <string>/org/marketsuite/component/UI/images/sliderFocus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus.slider" type="idref" value="focusSlider"/>
+  <defaultsProperty key="Synthetica.focus.slider.insets" type="insets" value="1 1 1 1"/>
+
+  <object class="java.lang.String" id="focusTabbedPaneTabTop">
+    <string>/org/marketsuite/component/UI/images/tabbedPaneTabTopFocus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus.tabbedPane.tab.top" type="idref" value="focusTabbedPaneTabTop"/>
+  <defaultsProperty key="Synthetica.focus.tabbedPane.tab.top.insets" type="insets" value="3 3 1 3"/>
+
+  <object class="java.lang.String" id="focusTabbedPaneTabLeft">
+    <string>/org/marketsuite/component/UI/images/tabbedPaneTabLeftFocus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus.tabbedPane.tab.left" type="idref" value="focusTabbedPaneTabLeft"/>
+  <defaultsProperty key="Synthetica.focus.tabbedPane.tab.left.insets" type="insets" value="3 3 3 1"/>
+
+  <object class="java.lang.String" id="focusTabbedPaneTabBottom">
+    <string>/org/marketsuite/component/UI/images/tabbedPaneTabBottomFocus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus.tabbedPane.tab.bottom" type="idref" value="focusTabbedPaneTabBottom"/>
+  <defaultsProperty key="Synthetica.focus.tabbedPane.tab.bottom.insets" type="insets" value="1 3 3 3"/>
+
+  <object class="java.lang.String" id="focusTabbedPaneTabRight">
+    <string>/org/marketsuite/component/UI/images/tabbedPaneTabRightFocus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus.tabbedPane.tab.right" type="idref" value="focusTabbedPaneTabRight"/>
+  <defaultsProperty key="Synthetica.focus.tabbedPane.tab.right.insets" type="insets" value="3 1 3 3"/>
+
+  <object class="java.lang.String" id="focusTaskPane">
+    <string>/org/marketsuite/component/UI/images/focus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus.taskPane" type="idref" value="focusTaskPane"/>
+  <defaultsProperty key="Synthetica.focus.taskPane.insets" type="insets" value="3 3 3 3"/>
+
+  <object class="java.lang.String" id="focusHyperlink">
+    <string>/org/marketsuite/component/UI/images/sliderFocus3.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.focus.hyperlink" type="idref" value="focusHyperlink"/>
+  <defaultsProperty key="Synthetica.focus.hyperlink.insets" type="insets" value="1 1 1 1"/>
+
+
+<!-- 
+*******************************************************************************
+FormattedTextField
+*******************************************************************************
+-->
+  <style id="formattedTextField">
+    <insets top="3" left="3" bottom="3" right="3"/>
+
+    <state>
+      <color value="#FFFFFF" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="lockedColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.formattedTextField.lockedColor" type="idref" value="lockedColor"/>
+
+      <object class="java.lang.String" id="formattedTextFieldBorder">
+        <string>/org/marketsuite/component/UI/images/border.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.formattedTextField.border" type="idref" value="formattedTextFieldBorder"/>
+      <defaultsProperty key="Synthetica.formattedTextField.border.insets" type="insets" value="3 3 3 3"/>
+      <defaultsProperty key="Synthetica.formattedTextField.border.opaqueBackground" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.formattedTextField.border.disabled.opaqueBackground" type="boolean" value="true"/>
+
+      <object class="java.lang.String" id="formattedTextFieldBorderLocked">
+        <string>/org/marketsuite/component/UI/images/border_locked.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.formattedTextField.border.locked" type="idref" value="formattedTextFieldBorderLocked"/>
+
+	  <painter method="formattedTextFieldBackground" idref="syntheticaPainter" />
+	  <painter method="formattedTextFieldBorder" idref="syntheticaPainter" />	  
+    </state>
+
+    <state value="SELECTED">
+    <!--
+      <color type="TEXT_BACKGROUND" value="#CCF0FF" />
+      -->
+      <color type="TEXT_BACKGROUND" value="#3DB4BE" />
+      <color type="TEXT_FOREGROUND" value="#333333" /> 
+  	</state>
+
+    <state value="DISABLED">
+      <color value="#F3F3F3" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="disabledColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.formattedTextField.disabledColor" type="idref" value="disabledColor"/>
+
+      <object class="java.lang.String" id="formattedTextFieldBorderDisabled">
+        <string>/org/marketsuite/component/UI/images/border_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.formattedTextField.border.disabled" type="idref" value="formattedTextFieldBorderDisabled"/>
+
+	  <painter method="formattedTextFieldBackground" idref="syntheticaPainter" />
+	  <painter method="formattedTextFieldBorder" idref="syntheticaPainter" />	  
+    </state>
+  </style>
+  <bind style="formattedTextField" type="region" key="FormattedTextField"/>
+
+
+<!-- 
+*******************************************************************************
+InternalFrame
+*******************************************************************************
+-->
+  <style id="internalFrame">
+    <insets top="10" left="10" bottom="10" right="10"/>
+    <imageIcon id="internalFrameIcon" path="standard/images/icon.png"/>
+    <property key="InternalFrame.icon" value="internalFrameIcon"/>
+    <defaultsProperty key="Synthetica.internalFrame.titlePane.buttons.paintBorder" type="boolean" value="false"/>
+    <defaultsProperty key="Synthetica.internalFrame.titlePane.dropShadow" type="boolean" value="true"/>
+    <defaultsProperty key="Synthetica.internalFrame.titlePane.dropShadow.distance" type="integer" value="-8"/>
+    <defaultsProperty key="Synthetica.internalFrame.titlePane.dropShadow.highQuality" type="boolean" value="false"/>
+    <object class="javax.swing.plaf.ColorUIResource" id="dropShadowColor">
+      <!-- #FFFFFF -->
+      <int>255</int>
+      <int>255</int>
+      <int>255</int>
+    </object>
+    <defaultsProperty key="Synthetica.internalFrame.titlePane.dropShadow.color" type="idref" value="dropShadowColor"/>
+    <defaultsProperty key="Synthetica.internalFrame.titlePane.background.horizontalTiled" type="boolean" value="true"/>
+    <defaultsProperty key="Synthetica.internalFrame.titlePane.background.verticalTiled" type="boolean" value="true"/>
+    <defaultsProperty key="Synthetica.internalFrame.titlePane.title.center" type="boolean" value="true"/>
+
+    <state>
+      <opaque value="false"/>
+      <color type="BACKGROUND" value="#888D85" />
+      
+      <object class="java.lang.String" id="internalFrameBorder">
+        <string>/org/marketsuite/component/UI/images/internalFrameBorder.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.internalFrame.border" type="idref" value="internalFrameBorder"/>
+      <defaultsProperty key="Synthetica.internalFrame.border.insets" type="insets" value="28 10 10 10"/>
+
+      <object class="java.lang.String" id="internalFrameBorderSelected">
+        <string>/org/marketsuite/component/UI/images/internalFrameBorder_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.internalFrame.border.selected" type="idref" value="internalFrameBorderSelected"/>
+
+	  <painter method="internalFrameBorder" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="internalFrame" type="region" key="InternalFrame"/>  
+
+  <style id="internalFrameTitlePane">
+    <imageIcon id="internalFrameCloseIcon" path="/org/marketsuite/component/UI/images/internalFrameCloseIcon.png"/>
+    <imageIcon id="internalFrameMaximizeIcon" path="/org/marketsuite/component/UI/images/internalFrameMaximizeIcon.png"/>
+    <imageIcon id="internalFrameMinimizeIcon" path="/org/marketsuite/component/UI/images/internalFrameMinimizeIcon.png"/>
+    <imageIcon id="internalFrameIconifyIcon" path="/org/marketsuite/component/UI/images/internalFrameIconifyIcon.png"/>
+
+    <imageIcon id="internalFrameCloseIconHover" path="/org/marketsuite/component/UI/images/internalFrameCloseIcon_hover.png"/>
+    <imageIcon id="internalFrameMaximizeIconHover" path="/org/marketsuite/component/UI/images/internalFrameMaximizeIcon_hover.png"/>
+    <imageIcon id="internalFrameMinimizeIconHover" path="/org/marketsuite/component/UI/images/internalFrameMinimizeIcon_hover.png"/>
+    <imageIcon id="internalFrameIconifyIconHover" path="/org/marketsuite/component/UI/images/internalFrameIconifyIcon_hover.png"/>
+
+    <imageIcon id="internalFrameCloseIconInactive" path="/org/marketsuite/component/UI/images/internalFrameCloseIcon_inactive.png"/>
+    <imageIcon id="internalFrameMaximizeIconInactive" path="/org/marketsuite/component/UI/images/internalFrameMaximizeIcon_inactive.png"/>
+    <imageIcon id="internalFrameMinimizeIconInactive" path="/org/marketsuite/component/UI/images/internalFrameMinimizeIcon_inactive.png"/>
+    <imageIcon id="internalFrameIconifyIconInactive" path="/org/marketsuite/component/UI/images/internalFrameIconifyIcon_inactive.png"/>
+
+    <imageIcon id="internalFrameCloseIconPressed" path="/org/marketsuite/component/UI/images/internalFrameCloseIcon_pressed.png"/>
+    <imageIcon id="internalFrameMaximizeIconPressed" path="/org/marketsuite/component/UI/images/internalFrameMaximizeIcon_pressed.png"/>
+    <imageIcon id="internalFrameMinimizeIconPressed" path="/org/marketsuite/component/UI/images/internalFrameMinimizeIcon_pressed.png"/>
+    <imageIcon id="internalFrameIconifyIconPressed" path="/org/marketsuite/component/UI/images/internalFrameIconifyIcon_pressed.png"/>
+
+    <state>
+      <property key="InternalFrameTitlePane.closeIcon" value="internalFrameCloseIconInactive"/>
+      <property key="InternalFrameTitlePane.minimizeIcon" value="internalFrameMinimizeIconInactive"/>
+      <property key="InternalFrameTitlePane.maximizeIcon" value="internalFrameMaximizeIconInactive"/>
+      <property key="InternalFrameTitlePane.iconifyIcon" value="internalFrameIconifyIconInactive"/>
+
+      <font name="Tahoma" size="11" style="BOLD" />
+      <insets top="2" left="2" bottom="2" right="2"/>
+      <color type="FOREGROUND" value="#C0C0C0" />
+      <color type="BACKGROUND" value="#EFEFEF" />
+
+      <object class="java.lang.String" id="internalFrameTitlePaneBackground">
+        <string>/org/marketsuite/component/UI/images/internalFrameTitlePaneBackground.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.internalFrameTitlePane.background" type="idref" value="internalFrameTitlePaneBackground"/>
+      <defaultsProperty key="Synthetica.internalFrameTitlePane.background.insets" type="insets" value="0 0 0 0"/>
+
+      <object class="java.lang.String" id="internalFrameTitlePaneBackgroundSelected">
+        <string>/org/marketsuite/component/UI/images/internalFrameTitlePaneBackground_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.internalFrameTitlePane.background.selected" type="idref" value="internalFrameTitlePaneBackgroundSelected"/>
+
+	  <painter method="internalFrameTitlePaneBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">
+      <property key="InternalFrameTitlePane.closeIcon" value="internalFrameCloseIcon"/>
+      <property key="InternalFrameTitlePane.minimizeIcon" value="internalFrameMinimizeIcon"/>
+      <property key="InternalFrameTitlePane.maximizeIcon" value="internalFrameMaximizeIcon"/>
+      <property key="InternalFrameTitlePane.iconifyIcon" value="internalFrameIconifyIcon"/>
+
+      <color type="TEXT_FOREGROUND" value="#333333" />
+      <color type="FOREGROUND" value="#333333" />
+      <color type="BACKGROUND" value="#FCFCFC" />
+	  <painter method="internalFrameTitlePaneBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="MOUSE_OVER">
+      <property key="InternalFrameTitlePane.closeIcon" value="internalFrameCloseIconHover"/>
+      <property key="InternalFrameTitlePane.minimizeIcon" value="internalFrameMinimizeIconHover"/>
+      <property key="InternalFrameTitlePane.maximizeIcon" value="internalFrameMaximizeIconHover"/>
+      <property key="InternalFrameTitlePane.iconifyIcon" value="internalFrameIconifyIconHover"/>
+    </state>
+
+    <state value="PRESSED">
+      <property key="InternalFrameTitlePane.closeIcon" value="internalFrameCloseIconPressed"/>
+      <property key="InternalFrameTitlePane.minimizeIcon" value="internalFrameMinimizeIconPressed"/>
+      <property key="InternalFrameTitlePane.maximizeIcon" value="internalFrameMaximizeIconPressed"/>
+      <property key="InternalFrameTitlePane.iconifyIcon" value="internalFrameIconifyIconPressed"/>
+    </state>
+
+  </style>
+  <bind style="internalFrameTitlePane" type="region" key="InternalFrameTitlePane"/>  
+
+  <style id="internalFrameMenuButton">
+    <insets top="0" left="0" bottom="0" right="0"/>
+  </style>
+  <bind style="internalFrameMenuButton" type="name" key="InternalFrameTitlePane.menuButton"/>  
+  
+  <style id="internalFrameIconifyButton">
+    <insets top="0" left="0" bottom="0" right="0"/>
+  </style>
+  <bind style="internalFrameIconifyButton" type="name" key="InternalFrameTitlePane.iconifyButton"/>  
+
+  <style id="internalFrameMaximizeButton">
+    <insets top="0" left="0" bottom="0" right="0"/>
+  </style>
+  <bind style="internalFrameMaximizeButton" type="name" key="InternalFrameTitlePane.maximizeButton"/>  
+
+  <style id="internalFrameCloseButton">
+    <insets top="0" left="0" bottom="0" right="0"/>
+  </style>
+  <bind style="internalFrameCloseButton" type="name" key="InternalFrameTitlePane.closeButton"/>  
+
+
+<!-- 
+*******************************************************************************
+Label
+*******************************************************************************
+-->
+  <style id="label">
+    <insets top="1" left="1" bottom="1" right="1"/>
+
+    <state>      
+	  <painter method="labelBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="label" type="region" key="Label"/>
+
+
+<!-- 
+*******************************************************************************
+List
+*******************************************************************************
+-->
+  <style id="list">
+    <property key="List.rendererUseListColors" type="boolean" value="false"/>
+
+    <object class="javax.swing.plaf.ColorUIResource" id="hlBorderColor">
+      <!-- #3680A3 -->
+      <int>54</int>
+      <int>128</int>
+      <int>163</int>
+    </object>
+    <defaultsProperty key="Synthetica.list.focusCellHighlightBorder.color" type="idref" value="hlBorderColor" />
+
+    <state>
+      <color type="BACKGROUND" value="#FFFFFF" /> 
+      <color type="FOREGROUND" value="#333333" /> 
+    </state>
+
+    <!-- Note: Opaque has to be set to true for region Label.selected -->
+    <state value="SELECTED">
+      <color type="TEXT_FOREGROUND" value="#333333" /> 
+      <!-- 
+      <color type="TEXT_BACKGROUND" value="#CCF0FF" /> 
+      -->
+      <color type="TEXT_BACKGROUND" value="#3DB4BE" />
+    </state>
+  </style>
+  <bind style="list" type="region" key="List"/>
+
+
+<!-- 
+*******************************************************************************
+LoginPanel
+*******************************************************************************
+-->
+  <object class="java.lang.String" id="loginPanelBackground">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/loginBackground.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.loginPanel.background" type="idref" value="loginPanelBackground"/>
+
+  <defaultsProperty key="Synthetica.loginPanel.title.size" type="integer" value="28"/>
+  <object class="javax.swing.plaf.ColorUIResource" id="loginPanelTitleColor">
+    <int>255</int>
+    <int>255</int>
+    <int>255</int>
+  </object>
+  <defaultsProperty key="Synthetica.loginPanel.title.color" type="idref" value="loginPanelTitleColor"/>
+  <defaultsProperty key="Synthetica.loginPanel.title.xPos" type="integer" value="10"/>
+  <defaultsProperty key="Synthetica.loginPanel.title.yPos" type="integer" value="10"/>
+  <defaultsProperty key="Synthetica.loginPanel.title.shadow" type="boolean" value="true"/>
+  <defaultsProperty key="Synthetica.loginPanel.title.enabled" type="boolean" value="true"/>
+  <defaultsProperty key="org.jdesktop.swingx.JXLoginDialog.titlePane.enabled" type="boolean" value="false"/>
+
+
+<!-- 
+*******************************************************************************
+Menu
+*******************************************************************************
+-->
+  <style id="menu">
+    <insets top="5" left="0" bottom="5" right="0"/>
+    <property key="Menu.textIconGap" type="integer" value="8"/>
+
+    <imageIcon id="arrowIcon" path="/org/marketsuite/component/UI/images/arrowRight.png"/>
+    <imageIcon id="arrowIconSelected" path="/org/marketsuite/component/UI/images/arrowRight_hover.png"/>
+    <imageIcon id="arrowIconDisabled" path="/org/marketsuite/component/UI/images/arrowRight_disabled.png"/>
+
+    <state>
+      <opaque value="false" />
+      <color type="BACKGROUND" value="#EFEFEF" />
+      <color type="FOREGROUND" value="#333333" />
+      <color type="TEXT_FOREGROUND" value="#333333" />
+      <property key="Menu.arrowIcon" value="arrowIcon"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="toplevelTextColor">
+        <!-- #333333 -->
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+      </object>
+      <defaultsProperty key="Synthetica.menu.toplevel.textColor" type="idref" value="toplevelTextColor"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="toplevelInactiveTextColor">
+        <!-- #C0C0C0 -->
+        <int>192</int>
+        <int>192</int>
+        <int>192</int>
+      </object>
+      <defaultsProperty key="Synthetica.menu.toplevel.textColor.inactive" type="idref" value="toplevelInactiveTextColor"/>
+
+      <defaultsProperty key="Synthetica.menu.toplevel.background.insets" type="insets" value="8 8 8 8"/>
+
+      <object class="java.lang.String" id="menuBackground">
+        <string>/org/marketsuite/component/UI/images/dummy.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.menu" type="idref" value="menuBackground"/>
+      <defaultsProperty key="Synthetica.menu.insets" type="insets" value="5 5 5 5"/>
+
+	  <painter method="menuBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">
+      <opaque value="true" />
+      <color type="BACKGROUND" value="#CCF0FF" />
+      <color type="TEXT_FOREGROUND" value="#333333" />
+      <property key="Menu.arrowIcon" value="arrowIconSelected"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="toplevelSelectedTextColor">
+        <!-- #333333 -->
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+      </object>
+      <defaultsProperty key="Synthetica.menu.toplevel.textColor.selected" type="idref" value="toplevelSelectedTextColor"/>
+
+
+      <object class="java.lang.String" id="menuToplevelBackground">
+        <string>/org/marketsuite/component/UI/images/menuBar_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.menu.toplevel.background.selected" type="idref" value="menuToplevelBackground"/>
+
+      <object class="java.lang.String" id="menuBackground">
+        <string>/org/marketsuite/component/UI/images/menuItem_hover5.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.menu.hover" type="idref" value="menuBackground"/>
+
+      <object class="java.lang.String" id="menuBackground">
+        <string>/org/marketsuite/component/UI/images/menuItem_hover5.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.menu.selected" type="idref" value="menuBackground"/>
+
+	  <painter method="menuBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+      <property key="Menu.arrowIcon" value="arrowIconDisabled"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="toplevelDisabledTextColor">
+        <!-- #A0A0A0 -->
+        <int>160</int>
+        <int>160</int>
+        <int>160</int>
+      </object>
+      <defaultsProperty key="Synthetica.menu.toplevel.textColor.disabled" type="idref" value="toplevelDisabledTextColor"/>
+
+      <object class="java.lang.String" id="menuBackground">
+        <string>/org/marketsuite/component/UI/images/dummy.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.menu.disabled" type="idref" value="menuBackground"/>
+
+	  <painter method="menuBackground" idref="syntheticaPainter" />
+    </state>
+
+  </style>
+  <bind style="menu" type="region" key="Menu"/>
+
+
+<!-- 
+*******************************************************************************
+MenuBar
+*******************************************************************************
+-->
+  <style id="menuBar">
+    <insets top="0" left="0" bottom="-2" right="0"/>
+    <state>
+      <opaque value="false" />
+      <color type="BACKGROUND" value="#BFDBFF" />
+
+      <defaultsProperty key="Synthetica.menuBar.background.horizontalTiled" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.menuBar.background.verticalTiled" type="boolean" value="true"/>
+
+	  <painter method="menuBarBackground" idref="syntheticaPainter" />
+      <defaultsProperty key="Synthetica.menuBar.background.insets" type="insets" value="0 6 0 6"/>
+    </state>
+
+  </style>
+  <bind style="menuBar" type="region" key="MenuBar"/>
+
+
+<!-- 
+*******************************************************************************
+MenuItem
+*******************************************************************************
+-->
+  <style id="menuItem">
+    <insets top="5" left="0" bottom="5" right="0"/>
+    <property key="MenuItem.textIconGap" type="integer" value="8"/>
+    <defaultsProperty key="Synthetica.menuItem.icon.width" type="integer" value="16"/>
+    <defaultsProperty key="Synthetica.menuItem.checkRadioIcon.width" type="integer" value="16"/>
+    
+    <imageIcon id="radioButtonIconDefault" path="/org/marketsuite/component/UI/images/dummy.png"/>
+    <imageIcon id="radioButtonIconSelected" path="/org/marketsuite/component/UI/images/radioButtonIcon_selected.png"/>
+    <imageIcon id="radioButtonIconDisabled" path="/org/marketsuite/component/UI/images/dummy.png"/>
+    <imageIcon id="radioButtonIconDisabledAndSelected" path="/org/marketsuite/component/UI/images/radioButtonIcon_disabledSelected.png"/>
+    <imageIcon id="checkBoxIconDefault" path="/org/marketsuite/component/UI/images/dummy.png"/>
+    <imageIcon id="checkBoxIconSelected" path="/org/marketsuite/component/UI/images/checkBoxIcon_selected.png"/>
+    <imageIcon id="checkBoxIconDisabled" path="/org/marketsuite/component/UI/images/dummy.png"/>
+    <imageIcon id="checkBoxIconDisabledAndSelected" path="/org/marketsuite/component/UI/images/checkBoxIcon_disabledSelected.png"/>
+
+    <state>
+      <color type="FOREGROUND" value="#333333" />
+      <color type="TEXT_FOREGROUND" value="#333333" />
+      <property key="RadioButtonMenuItem.checkIcon" value="radioButtonIconDefault"/>
+      <property key="CheckBoxMenuItem.checkIcon" value="checkBoxIconDefault"/>
+      <defaultsProperty key="Synthetica.menuItem.insets" type="insets" value="5 5 5 5"/>
+
+      <object class="java.lang.String" id="menuItemBackground">
+        <string>/org/marketsuite/component/UI/images/dummy.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.menuItem" type="idref" value="menuItemBackground"/>
+
+	  <painter method="menuItemBackground" idref="syntheticaPainter" />
+	  <painter method="radioButtonMenuItemBackground" idref="syntheticaPainter" />
+	  <painter method="checkBoxMenuItemBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="MOUSE_OVER">
+      <color type="TEXT_FOREGROUND" value="#333333" />
+      <object class="java.lang.String" id="menuItemBackground">
+        <string>/org/marketsuite/component/UI/images/menuItem_hover5.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.menuItem.hover" type="idref" value="menuItemBackground"/>
+	  <painter method="menuItemBackground" idref="syntheticaPainter" />
+	  <painter method="radioButtonMenuItemBackground" idref="syntheticaPainter" />
+	  <painter method="checkBoxMenuItemBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">
+      <color type="TEXT_FOREGROUND" value="#333333" />
+      <property key="RadioButtonMenuItem.checkIcon" value="radioButtonIconSelected"/>
+      <property key="CheckBoxMenuItem.checkIcon" value="checkBoxIconSelected"/>
+    </state>
+
+    <state value="MOUSE_OVER AND SELECTED">
+      <property key="RadioButtonMenuItem.checkIcon" value="radioButtonIconSelected"/>
+      <property key="CheckBoxMenuItem.checkIcon" value="checkBoxIconSelected"/>
+      <color type="TEXT_FOREGROUND" value="#333333" />
+
+	  <painter method="menuItemBackground" idref="syntheticaPainter" />
+	  <painter method="radioButtonMenuItemBackground" idref="syntheticaPainter" />
+	  <painter method="checkBoxMenuItemBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+      <property key="RadioButtonMenuItem.checkIcon" value="radioButtonIconDisabled"/>
+      <property key="CheckBoxMenuItem.checkIcon" value="checkBoxIconDisabled"/>
+
+      <object class="java.lang.String" id="menuItemBackground">
+        <string>/org/marketsuite/component/UI/images/dummy.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.menuItem.disabled" type="idref" value="menuItemBackground"/>
+
+	  <painter method="menuItemBackground" idref="syntheticaPainter" />
+	  <painter method="radioButtonMenuItemBackground" idref="syntheticaPainter" />
+	  <painter method="checkBoxMenuItemBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED AND SELECTED">
+  	  <color type="TEXT_FOREGROUND" value="#AAAAAA" /> 
+      <color type="BACKGROUND" value="#F3F3F3" />
+      <property key="RadioButtonMenuItem.checkIcon" value="radioButtonIconDisabledAndSelected"/>
+      <property key="CheckBoxMenuItem.checkIcon" value="checkBoxIconDisabledAndSelected"/>
+    </state>
+
+  </style>
+  <bind style="menuItem" type="region" key="MenuItem"/>
+  <bind style="menuItem" type="region" key="RadioButtonMenuItem"/>
+  <bind style="menuItem" type="region" key="CheckBoxMenuItem"/>
+  
+
+<!-- 
+*******************************************************************************
+MenuItemAccelerator
+*******************************************************************************
+-->
+  <style id="menuItemAccelerator">
+    <state>
+      <opaque value="true" />
+      <color type="BACKGROUND" value="#CCF0FF" />
+      <color type="TEXT_FOREGROUND" value="#808080" />
+    </state>
+    <state value="MOUSE_OVER">
+      <opaque value="true" />
+      <color type="BACKGROUND" value="#CCF0FF" />
+      <color type="TEXT_FOREGROUND" value="#606060" />
+    </state>
+  </style>
+  <bind style="menuItemAccelerator" type="region" key="MenuItemAccelerator"/>
+
+
+<!-- 
+*******************************************************************************
+MonthView
+*******************************************************************************
+-->
+  <object class="java.lang.String" id="jxmonthDownArrow">
+    <string>/org/marketsuite/component/UI/images/arrowLeft.png</string>
+  </object>
+  <defaultsProperty key="JXMonthView.monthDownFileName" type="idref" value="jxmonthDownArrow"/>
+
+  <object class="java.lang.String" id="jxmonthUpArrow">
+    <string>/org/marketsuite/component/UI/images/arrowRight.png</string>
+  </object>
+  <defaultsProperty key="JXMonthView.monthUpFileName" type="idref" value="jxmonthUpArrow"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="jxmonthMonthColor">
+    <!-- #333333 -->
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+  </object>
+  <defaultsProperty key="JXMonthView.monthStringForeground" type="idref" value="jxmonthMonthColor" />
+
+  <object class="javax.swing.plaf.ColorUIResource" id="jxmonthDaysOfTheWeekColor">
+    <!-- #007099 -->
+    <int>0</int>
+    <int>112</int>
+    <int>153</int>
+  </object>
+  <defaultsProperty key="JXMonthView.daysOfTheWeekForeground" type="idref" value="jxmonthDaysOfTheWeekColor" />
+
+  <object class="javax.swing.plaf.ColorUIResource" id="jxmonthSelectedBackground">
+    <!-- #A6EFFF -->
+    <int>166</int>
+    <int>239</int>
+    <int>255</int>
+  </object>
+  <defaultsProperty key="JXMonthView.selectedBackground" type="idref" value="jxmonthSelectedBackground" />
+
+  <object class="javax.swing.plaf.ColorUIResource" id="jxmonthLeadingDayForeground">
+    <!-- #A0A0A0 -->
+    <int>160</int>
+    <int>160</int>
+    <int>160</int>
+  </object>
+  <defaultsProperty key="JXMonthView.leadingDayForeground" type="idref" value="jxmonthLeadingDayForeground" />
+
+  <object class="javax.swing.plaf.ColorUIResource" id="jxmonthTrailingDayForeground">
+    <!-- #A0A0A0 -->
+    <int>160</int>
+    <int>160</int>
+    <int>160</int>
+  </object>
+  <defaultsProperty key="JXMonthView.trailingDayForeground" type="idref" value="jxmonthTrailingDayForeground" />
+
+  <object class="java.lang.String" id="monthViewMonthBackground">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/monthViewMonthBackground.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.monthView.monthBackground" type="idref" value="monthViewMonthBackground"/>
+  <defaultsProperty key="Synthetica.monthView.monthBackground.insets" type="insets" value="4 4 4 4"/>
+
+<!-- 
+*******************************************************************************
+OptionPane
+*******************************************************************************
+-->
+  <style id="optionPane">
+    <insets top="3" left="3" bottom="3" right="3"/>
+    <state>
+      <imageIcon id="infoIcon" path="/org/marketsuite/component/UI/images/infoIcon.png"/>
+      <imageIcon id="questionIcon" path="/org/marketsuite/component/UI/images/questionIcon.png"/>
+      <imageIcon id="warningIcon" path="/org/marketsuite/component/UI/images/warningIcon.png"/>
+      <imageIcon id="errorIcon" path="/org/marketsuite/component/UI/images/errorIcon.png"/>
+      <imageIcon id="stopIcon" path="/org/marketsuite/component/UI/images/stopIcon.png"/>
+      <property key="OptionPane.informationIcon" value="infoIcon"/>
+      <property key="OptionPane.questionIcon" value="questionIcon"/>
+      <property key="OptionPane.warningIcon" value="warningIcon"/>
+      <property key="OptionPane.errorIcon" value="errorIcon"/>
+      <property key="OptionPane.stopIcon" value="stopIcon"/>
+    </state>
+  </style>
+  <bind style="optionPane" type="region" key="OptionPane"/>
+
+
+<!-- 
+*******************************************************************************
+Panel
+*******************************************************************************
+-->
+  <style id="panel">    
+    <!-- Default values for TitledBorder - not Synthetica specific, see javax.swing.border.TitledBorder -->
+    <object class="javax.swing.plaf.ColorUIResource" id="titledBorderTitleColor">
+      <!-- #0C4A7C -->
+      <int>12</int>
+      <int>74</int>
+      <int>124</int>
+    </object>
+    <defaultsProperty key="TitledBorder.titleColor" type="idref" value="titledBorderTitleColor"/>
+
+    <state>
+      <!-- <font name="Tahoma" size="11" style="BOLD" /> -->
+      <!-- <color type="FOREGROUND" value="#333333" /> -->
+      <color type="BACKGROUND" value="#EFEFEF" />
+      <opaque value="true"/>
+
+      <object class="java.lang.String" id="titledBorder">
+        <string>/org/marketsuite/component/UI/images/titledBorder.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.titledBorder" type="idref" value="titledBorder"/>
+      <defaultsProperty key="Synthetica.titledBorder.insets" type="insets" value="4 4 4 4"/>
+
+	  <painter method="panelBackground" idref="syntheticaPainter" />      
+    </state>
+  </style>
+  <bind style="panel" type="region" key="Panel"/>  
+
+<!-- 
+*******************************************************************************
+PasswordField
+*******************************************************************************
+-->
+  <style id="passwordField">
+    <insets top="3" left="3" bottom="3" right="3"/>
+
+    <state>
+      <color value="#FFFFFF" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="lockedColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.passwordField.lockedColor" type="idref" value="lockedColor"/>
+
+      <object class="java.lang.String" id="passwordFieldBorder">
+        <string>/org/marketsuite/component/UI/images/border.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.passwordField.border" type="idref" value="passwordFieldBorder"/>
+      <defaultsProperty key="Synthetica.passwordField.border.insets" type="insets" value="3 3 3 3"/>
+      <defaultsProperty key="Synthetica.passwordField.border.opaqueBackground" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.passwordField.border.disabled.opaqueBackground" type="boolean" value="true"/>
+
+      <object class="java.lang.String" id="passwordFieldBorderLocked">
+        <string>/org/marketsuite/component/UI/images/border_locked.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.passwordField.border.locked" type="idref" value="passwordFieldBorderLocked"/>
+
+	  <painter method="passwordFieldBackground" idref="syntheticaPainter" />
+	  <painter method="passwordFieldBorder" idref="syntheticaPainter" />	  
+    </state>
+
+    <state value="SELECTED">
+    <!-- 
+      <color type="TEXT_BACKGROUND" value="#CCF0FF" />
+ -->
+       <color type="TEXT_BACKGROUND" value="#3DB4BE" />
+      <color type="TEXT_FOREGROUND" value="#333333" /> 
+  	</state>
+
+    <state value="DISABLED">
+      <color value="#F3F3F3" type="BACKGROUND"/>
+
+      <object class="java.lang.String" id="passwordFieldBorderDisabled">
+        <string>/org/marketsuite/component/UI/images/border_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.passwordField.border.disabled" type="idref" value="passwordFieldBorderDisabled"/>
+
+	  <painter method="passwordFieldBackground" idref="syntheticaPainter" />
+	  <painter method="passwordFieldBorder" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="passwordField" type="region" key="PasswordField"/>
+
+
+<!-- 
+*******************************************************************************
+PopupMenu
+*******************************************************************************
+-->
+  <style id="popupMenu">
+    <insets top="3" left="5" bottom="7" right="5"/>
+    <defaultsProperty key="Synthetica.popup.osShadow.enabled" type="boolean" value="false" />
+    <defaultsProperty key="Synthetica.popupMenu.blur.enabled" type="boolean" value="true" />
+    <defaultsProperty key="Synthetica.popupMenu.blur.insets" type="insets" value="2 3 6 3"/>
+    <defaultsProperty key="Synthetica.popupMenu.blur.size" type="integer" value="5"/>
+
+    <state>
+      <object class="java.lang.String" id="popupMenuBackground">
+        <string>/org/marketsuite/component/UI/images/popupMenuBackground.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.popupMenu.background" type="idref" value="popupMenuBackground"/>
+      <defaultsProperty key="Synthetica.popupMenu.background.insets" type="insets" value="8 8 8 8"/>
+
+      <object class="java.lang.String" id="popupMenuBlurBackground">
+        <string>/org/marketsuite/component/UI/images/popupMenuBlurBackground.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.popupMenu.blur.background" type="idref" value="popupMenuBlurBackground"/>
+
+      <!-- set style by name "DateComboBoxPopup" -->
+      <object class="java.lang.String" id="dataComboBoxPopupMenuBackground">
+        <string>/org/marketsuite/component/UI/images/popupMenuBackground.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.popupMenu.background.DateComboBoxPopup" type="idref" value="dataComboBoxPopupMenuBackground"/>
+      <defaultsProperty key="Synthetica.popupMenu.background.insets.DateComboBoxPopup" type="insets" value="7 7 7 7"/>
+
+      <object class="java.lang.String" id="popupMenuBackground">
+        <string>/org/marketsuite/component/UI/images/popupMenuIconSeparator.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.popupMenu.iconSeparator" type="idref" value="popupMenuBackground"/>
+      <defaultsProperty key="Synthetica.popupMenu.iconSeparator.gap" type="integer" value="4"/>
+      <defaultsProperty key="Synthetica.popupMenu.iconSeparator.width" type="integer" value="35"/>
+      <defaultsProperty key="Synthetica.popupMenu.iconSeparatorGap" type="integer" value="8"/>
+
+	  <painter method="popupMenuBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="popupMenu" type="region" key="PopupMenu"/>
+
+
+<!-- 
+*******************************************************************************
+PopupMenuSeparator
+*******************************************************************************
+-->
+  <style id="popupMenuSeparator">
+    <insets top="0" left="0" bottom="0" right="0"/>
+    <property key="Separator.thickness" type="integer" value="2"/>     
+
+    <state>
+      <opaque value="false" />
+      <object class="java.lang.String" id="popupMenuSeparatorBackground">
+        <string>/org/marketsuite/component/UI/images/popupMenuSeparator.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.popupMenuSeparator" type="idref" value="popupMenuSeparatorBackground"/>
+      <defaultsProperty key="Synthetica.popupMenuSeparator.iconSeparatorGap" type="integer" value="2"/>
+	  <painter method="separatorBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="popupMenuSeparator" type="region" key="PopupMenuSeparator"/>
+
+
+<!-- 
+*******************************************************************************
+ProgressBar
+*******************************************************************************
+-->
+  <style id="progressBar">
+    <insets top="2" left="2" bottom="2" right="2" />
+    <defaultsProperty key="Synthetica.progressBar.continuous" type="boolean" value="false" />
+
+    <state>
+      <object class="java.lang.String" id="progressBarXBackground">
+        <string>/org/marketsuite/component/UI/images/progressBarXBackground.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.x.background" type="idref" value="progressBarXBackground"/>
+      <defaultsProperty key="Synthetica.progressBar.x.background.insets" type="insets" value="4 4 4 4"/>
+
+      <object class="java.lang.String" id="progressBarXBackgroundActive">
+        <string>/org/marketsuite/component/UI/images/progressBarXBackground_active5.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.x.background.active" type="idref" value="progressBarXBackgroundActive"/>
+
+      <object class="java.lang.String" id="progressBarYBackground">
+        <string>/org/marketsuite/component/UI/images/progressBarYBackground.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.y.background" type="idref" value="progressBarYBackground"/>
+      <defaultsProperty key="Synthetica.progressBar.y.background.insets" type="insets" value="4 4 4 4"/>
+
+      <object class="java.lang.String" id="progressBarYBackgroundActive">
+        <string>/org/marketsuite/component/UI/images/progressBarYBackground_active5.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.y.background.active" type="idref" value="progressBarYBackgroundActive"/>
+
+      <object class="java.lang.String" id="progressBarX">
+        <string>/org/marketsuite/component/UI/images/progressBarX.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.x" type="idref" value="progressBarX"/>
+      <defaultsProperty key="Synthetica.progressBar.x.insets" type="insets" value="2 0 2 0"/>
+
+      <object class="java.lang.String" id="progressBarY">
+        <string>/org/marketsuite/component/UI/images/progressBarY.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.y" type="idref" value="progressBarY"/>
+      <defaultsProperty key="Synthetica.progressBar.y.insets" type="insets" value="0 0 0 0"/>
+
+      <object class="java.lang.String" id="progressBarTextBackground">
+        <string>/org/marketsuite/component/UI/images/progressBarTextBackground.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.textBackground" type="idref" value="progressBarTextBackground"/>
+      <defaultsProperty key="Synthetica.progressBar.textBackground.insets" type="insets" value="5 5 5 5"/>
+
+	  <painter method="progressBarForeground" idref="syntheticaPainter" />
+	  <painter method="progressBarBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+      <object class="java.lang.String" id="progressBarXBackground">
+        <string>/org/marketsuite/component/UI/images/progressBarXBackground_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.x.background.disabled" type="idref" value="progressBarXBackground"/>
+
+      <object class="java.lang.String" id="progressBarYBackground">
+        <string>/org/marketsuite/component/UI/images/progressBarYBackground_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.y.background.disabled" type="idref" value="progressBarYBackground"/>
+
+      <object class="java.lang.String" id="progressBarXDisabled">
+        <string>/org/marketsuite/component/UI/images/progressBarX_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.x.disabled" type="idref" value="progressBarXDisabled"/>
+
+      <object class="java.lang.String" id="progressBarYDisabled">
+        <string>/org/marketsuite/component/UI/images/progressBarY_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.progressBar.y.disabled" type="idref" value="progressBarYDisabled"/>
+
+	  <painter method="progressBarForeground" idref="syntheticaPainter" />
+	  <painter method="progressBarBackground" idref="syntheticaPainter" />
+    </state>
+
+  </style>
+  <bind style="progressBar" type="region" key="ProgressBar"/>
+
+
+<!-- 
+*******************************************************************************
+RadioButton
+*******************************************************************************
+-->
+  <style id="radioButton">
+    <insets top="4" left="4" bottom="4" right="4"/>
+    <imageIcon id="radioButtonDefault" path="/org/marketsuite/component/UI/images/dummy.png"/>
+
+    <state>
+      <property key="RadioButton.icon" value="radioButtonDefault"/>
+      <opaque value="true"/>
+
+      <object class="java.lang.String" id="radioButtonImage">
+        <string>/org/marketsuite/component/UI/images/radioButton.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.image" type="idref" value="radioButtonImage"/>
+
+      <object class="java.lang.String" id="radioButtonBorder">
+        <string>/org/marketsuite/component/UI/images/checkBoxBorder.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.border" type="idref" value="radioButtonBorder"/>
+      <defaultsProperty key="Synthetica.radioButton.border.insets" type="insets" value="2 2 2 2"/>
+
+	  <painter method="radioButtonBorder" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">   
+      <object class="java.lang.String" id="radioButtonImage">
+        <string>/org/marketsuite/component/UI/images/radioButton_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.selected.image" type="idref" value="radioButtonImage"/>
+	</state>
+
+    <state value="PRESSED">
+      <object class="java.lang.String" id="radioButtonPressed">
+        <string>/org/marketsuite/component/UI/images/radioButton_hoverSelected4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.pressed.image" type="idref" value="radioButtonPressed"/>
+      <object class="java.lang.String" id="radioButtonPressedSelected">
+        <string>/org/marketsuite/component/UI/images/radioButton_hoverSelected4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.pressed.selected.image" type="idref" value="radioButtonPressedSelected"/>
+	</state>
+
+    <state value="MOUSE_OVER">   
+      <object class="java.lang.String" id="radioButtonImage">
+        <string>/org/marketsuite/component/UI/images/radioButton_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.hover.image" type="idref" value="radioButtonImage"/>
+	</state>
+
+    <state value="MOUSE_OVER AND SELECTED">
+      <object class="java.lang.String" id="radioButtonImage">
+        <string>/org/marketsuite/component/UI/images/radioButton_hoverSelected4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.hover.selected.image" type="idref" value="radioButtonImage"/>
+	</state>
+
+    <state value="FOCUSED">
+      <object class="java.lang.String" id="radioButtonFocus">
+        <string>/org/marketsuite/component/UI/images/focus3.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.focus" type="idref" value="radioButtonFocus"/>
+      <defaultsProperty key="Synthetica.radioButton.focus.insets" type="insets" value="3 3 3 3"/>
+
+	  <painter method="radioButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+  	  <color type="TEXT_FOREGROUND" value="#AAAAAA" /> 
+      <object class="java.lang.String" id="radioButtonImage">
+        <string>/org/marketsuite/component/UI/images/radioButton_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.disabled.image" type="idref" value="radioButtonImage"/>
+	</state>
+
+    <state value="DISABLED AND SELECTED">
+  	  <color type="TEXT_FOREGROUND" value="#AAAAAA" /> 
+      <object class="java.lang.String" id="radioButtonImage">
+        <string>/org/marketsuite/component/UI/images/radioButton_disabledSelected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.radioButton.disabled.selected.image" type="idref" value="radioButtonImage"/>
+	</state>
+
+  </style>
+  <bind style="radioButton" type="region" key="RadioButton"/>
+
+
+<!-- 
+*******************************************************************************
+RootPane
+*******************************************************************************
+-->
+  <style id="rootPane">
+    <defaultsProperty key="Synthetica.rootPane.titlePane.buttons.paintBorder" type="boolean" value="false"/>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.dropShadow" type="boolean" value="true"/>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.dropShadow.distance" type="integer" value="-8"/>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.dropShadow.highQuality" type="boolean" value="false"/>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.title.center" type="boolean" value="true"/>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.iconifyButton.gap" type="integer" value="2"/>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.toggleButton.gap" type="integer" value="2"/>
+    <object class="javax.swing.plaf.ColorUIResource" id="dropShadowColor">
+      <!-- #FFFFFF -->
+      <int>255</int>
+      <int>255</int>
+      <int>255</int>
+    </object>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.dropShadow.color" type="idref" value="dropShadowColor"/>
+    <imageIcon id="rootPaneIcon" path="standard/images/icon.png"/>
+
+    <imageIcon id="rootPaneCloseIcon" path="/org/marketsuite/component/UI/images/closeIcon.png"/>
+    <imageIcon id="rootPaneMaximizeIcon" path="/org/marketsuite/component/UI/images/maximizeIcon.png"/>
+    <imageIcon id="rootPaneMinimizeIcon" path="/org/marketsuite/component/UI/images/minimizeIcon.png"/>
+    <imageIcon id="rootPaneIconifyIcon" path="/org/marketsuite/component/UI/images/iconifyIcon.png"/>
+
+    <imageIcon id="rootPaneCloseIconHover" path="/org/marketsuite/component/UI/images/closeIcon_hover.png"/>
+    <imageIcon id="rootPaneMaximizeIconHover" path="/org/marketsuite/component/UI/images/maximizeIcon_hover.png"/>
+    <imageIcon id="rootPaneMinimizeIconHover" path="/org/marketsuite/component/UI/images/minimizeIcon_hover.png"/>
+    <imageIcon id="rootPaneIconifyIconHover" path="/org/marketsuite/component/UI/images/iconifyIcon_hover.png"/>
+
+    <imageIcon id="rootPaneCloseIconPressed" path="/org/marketsuite/component/UI/images/closeIcon_pressed.png"/>
+    <imageIcon id="rootPaneMaximizeIconPressed" path="/org/marketsuite/component/UI/images/maximizeIcon_pressed.png"/>
+    <imageIcon id="rootPaneMinimizeIconPressed" path="/org/marketsuite/component/UI/images/minimizeIcon_pressed.png"/>
+    <imageIcon id="rootPaneIconifyIconPressed" path="/org/marketsuite/component/UI/images/iconifyIcon_pressed.png"/>
+
+    <imageIcon id="rootPaneCloseIconInactive" path="/org/marketsuite/component/UI/images/closeIcon_inactive.png"/>
+    <imageIcon id="rootPaneMaximizeIconInactive" path="/org/marketsuite/component/UI/images/maximizeIcon_inactive.png"/>
+    <imageIcon id="rootPaneMinimizeIconInactive" path="/org/marketsuite/component/UI/images/minimizeIcon_inactive.png"/>
+    <imageIcon id="rootPaneIconifyIconInactive" path="/org/marketsuite/component/UI/images/iconifyIcon_inactive.png"/>
+
+    <defaultsProperty key="Synthetica.rootPane.titlePane.opaque" type="boolean" value="false"/>
+
+    <object class="java.lang.String" id="rootPaneTitlePaneButtonAreaBackground">
+      <string>/org/marketsuite/component/UI/images/rootPaneButtonAreaBackground.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.buttonArea.background" type="idref" value="rootPaneTitlePaneButtonAreaBackground"/>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.buttonArea.insets" type="insets" value="2 2 2 2"/>
+    <defaultsProperty key="Synthetica.rootPane.titlePane.buttonArea.background.insets" type="insets" value="10 10 10 10"/>
+
+    <object class="java.lang.String" id="rootPaneBorder">
+      <string>/org/marketsuite/component/UI/images/rootPaneBorder_selected.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.rootPane.border" type="idref" value="rootPaneBorder"/>
+
+    <object class="java.lang.String" id="rootPaneBorderLight">
+      <string>/org/marketsuite/component/UI/images/rootPaneBorder_.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.rootPane.border.light" type="idref" value="rootPaneBorderLight"/>
+
+    <object class="java.lang.String" id="rootPaneBorderSelected">
+      <string>/org/marketsuite/component/UI/images/rootPaneBorder_selected.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.rootPane.border.selected" type="idref" value="rootPaneBorderSelected"/>
+
+    <object class="java.lang.String" id="rootPaneBorderLightSelected">
+      <string>/org/marketsuite/component/UI/images/rootPaneBorder_selected_.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.rootPane.border.light.selected" type="idref" value="rootPaneBorderLightSelected"/>
+
+    <defaultsProperty key="Synthetica.rootPane.border.insets" type="insets" value="80 4 4 4"/>
+    <defaultsProperty key="Synthetica.rootPane.border.size" type="insets" value="4 4 4 4"/>
+
+    <state>
+      <property key="RootPane.icon" value="rootPaneIcon"/>
+      <property key="RootPane.closeIcon" value="rootPaneCloseIcon"/>
+      <property key="RootPane.minimizeIcon" value="rootPaneMinimizeIcon"/>
+      <property key="RootPane.maximizeIcon" value="rootPaneMaximizeIcon"/>
+      <property key="RootPane.iconifyIcon" value="rootPaneIconifyIcon"/>
+
+      <property key="RootPane.closeIcon.inactive" value="rootPaneCloseIconInactive"/>
+      <property key="RootPane.minimizeIcon.inactive" value="rootPaneMinimizeIconInactive"/>
+      <property key="RootPane.maximizeIcon.inactive" value="rootPaneMaximizeIconInactive"/>
+      <property key="RootPane.iconifyIcon.inactive" value="rootPaneIconifyIconInactive"/>
+    </state>
+
+    <state value="MOUSE_OVER">
+      <property key="RootPane.closeIcon" value="rootPaneCloseIconHover"/>
+      <property key="RootPane.minimizeIcon" value="rootPaneMinimizeIconHover"/>
+      <property key="RootPane.maximizeIcon" value="rootPaneMaximizeIconHover"/>
+      <property key="RootPane.iconifyIcon" value="rootPaneIconifyIconHover"/>
+    </state>
+
+    <state value="PRESSED">
+      <property key="RootPane.closeIcon" value="rootPaneCloseIconPressed"/>
+      <property key="RootPane.minimizeIcon" value="rootPaneMinimizeIconPressed"/>
+      <property key="RootPane.maximizeIcon" value="rootPaneMaximizeIconPressed"/>
+      <property key="RootPane.iconifyIcon" value="rootPaneIconifyIconPressed"/>
+    </state>
+
+  </style>
+  <bind style="rootPane" type="region" key="RootPane"/>
+
+
+<!--
+*******************************************************************************
+Spinner
+*******************************************************************************
+-->
+  <style id="spinner">
+    <insets top="3" left="2" bottom="3" right="2"/>
+    <defaultsProperty key="Synthetica.spinner.arrowButton.width" type="integer" value="16" />
+
+    <state>
+      <color type="BACKGROUND" value="#0FFFFF"/>
+      <object class="java.lang.String" id="spinnerBorder">
+        <string>/org/marketsuite/component/UI/images/border.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.spinner.border" type="idref" value="spinnerBorder"/>
+      <defaultsProperty key="Synthetica.spinner.border.insets" type="insets" value="4 4 4 4"/>
+      <defaultsProperty key="Synthetica.spinner.border.opaqueBackground" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.spinner.border.disabled.opaqueBackground" type="boolean" value="true"/>      
+      <defaultsProperty key="Synthetica.spinner.hoverAndPressed.enabled" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.spinner.stateChange4ButtonOnly" type="boolean" value="true"/>
+
+      <object class="java.lang.String" id="spinnerBorderHover">
+        <string>/org/marketsuite/component/UI/images/spinner_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.spinner.border.hover" type="idref" value="spinnerBorderHover"/>
+
+      <object class="java.lang.String" id="spinnerBorderPressed">
+        <string>/org/marketsuite/component/UI/images/spinner_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.spinner.border.pressed" type="idref" value="spinnerBorderPressed"/>
+
+      <painter method="spinnerBorder" idref="syntheticaPainter" />
+      <painter method="spinnerBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+      <color type="BACKGROUND" value="#F3F3F3"/>
+      <object class="java.lang.String" id="spinnerBorderDisabled">
+        <string>/org/marketsuite/component/UI/images/border_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.spinner.border.disabled" type="idref" value="spinnerBorderDisabled"/>
+      <painter method="spinnerBorder" idref="syntheticaPainter" />
+      <painter method="spinnerBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="spinner" type="region" key="Spinner"/>
+
+
+<!-- 
+*******************************************************************************
+ScrollPane
+*******************************************************************************
+-->
+  <style id="scrollPane">
+    <insets top="3" left="3" bottom="3" right="3"/>
+    <property key="ScrollPane.viewportBorderInsets" type="insets" value="0 0 0 0" />
+
+    <state>
+      <object class="java.lang.String" id="scrollPaneBorder">
+        <string>/org/marketsuite/component/UI/images/border.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollPane.border" type="idref" value="scrollPaneBorder"/>
+      <defaultsProperty key="Synthetica.scrollPane.border.insets" type="insets" value="3 3 3 3"/>
+
+      <object class="java.lang.String" id="scrollPaneBorderDisabled">
+        <string>/org/marketsuite/component/UI/images/border_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollPane.border.disabled" type="idref" value="scrollPaneBorderDisabled"/>
+
+	  <painter method="scrollPaneBackground" idref="syntheticaPainter" />
+	  <painter method="scrollPaneBorder" idref="syntheticaPainter" />
+    </state>
+    
+  </style>
+  <bind style="scrollPane" type="region" key="ScrollPane"/>
+
+
+<!-- 
+*******************************************************************************
+ScrollBar
+*******************************************************************************
+-->
+  <style id="scrollBar">
+    <state>
+      <opaque value="false" />
+      <property key="ScrollBar.squareButtons" type="boolean" value="true"/>
+      <property key="ScrollBar.thumbHeight" type="integer" value="18"/>
+      <property key="ScrollBar.minimumThumbSize" type="Dimension" value="30 30" />
+    </state>
+  </style>
+  <bind style="scrollBar" type="region" key="ScrollBar"/>
+
+  <style id="scrollBarThumb">
+    <state>
+      <object class="java.lang.String" id="scrollBarThumbXBackground">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbX.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.x.background" type="idref" value="scrollBarThumbXBackground"/>
+
+      <object class="java.lang.String" id="scrollBarThumbXBackgroundHover">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbX_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.x.background.hover" type="idref" value="scrollBarThumbXBackgroundHover"/>
+
+      <object class="java.lang.String" id="scrollBarThumbXBackgroundPressed">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbX_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.x.background.pressed" type="idref" value="scrollBarThumbXBackgroundPressed"/>
+
+      <object class="java.lang.String" id="scrollBarThumbXGrip">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbGripX.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.x.grip" type="idref" value="scrollBarThumbXGrip"/>
+
+      <object class="java.lang.String" id="scrollBarThumbXGripHover">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbGripX_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.x.grip.hover" type="idref" value="scrollBarThumbXGripHover"/>
+
+      <object class="java.lang.String" id="scrollBarThumbXGripPressed">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbGripX_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.x.grip.pressed" type="idref" value="scrollBarThumbXGripPressed"/>
+
+      <object class="java.lang.String" id="scrollBarThumbYBackground">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbY.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.y.background" type="idref" value="scrollBarThumbYBackground"/>
+
+      <object class="java.lang.String" id="scrollBarThumbYBackgroundHover">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbY_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.y.background.hover" type="idref" value="scrollBarThumbYBackgroundHover"/>
+
+      <object class="java.lang.String" id="scrollBarThumbYBackgroundPressed">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbY_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.y.background.pressed" type="idref" value="scrollBarThumbYBackgroundPressed"/>
+
+      <object class="java.lang.String" id="scrollBarThumbYGrip">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbGripY.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.y.grip" type="idref" value="scrollBarThumbYGrip"/>
+
+      <object class="java.lang.String" id="scrollBarThumbYGripHover">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbGripY_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.y.grip.hover" type="idref" value="scrollBarThumbYGripHover"/>
+
+      <object class="java.lang.String" id="scrollBarThumbYGripPressed">
+        <string>/org/marketsuite/component/UI/images/scrollBarThumbGripY_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarThumb.y.grip.pressed" type="idref" value="scrollBarThumbYGripPressed"/>
+
+      <defaultsProperty key="Synthetica.scrollBarThumb.background.insets" type="insets" value="9 9 9 9"/>
+
+	  <painter method="scrollBarThumbBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="scrollBarThumb" type="region" key="ScrollBarThumb"/>
+
+  <style id="scrollBarTrack">
+    <state>
+      <object class="java.lang.String" id="scrollBarTrackXBackground">
+        <string>/org/marketsuite/component/UI/images/scrollBarTrackX.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarTrack.x.background" type="idref" value="scrollBarTrackXBackground"/>
+
+      <object class="java.lang.String" id="scrollBarTrackXBackgroundHover">
+        <string>/org/marketsuite/component/UI/images/scrollBarTrackX_hover8.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarTrack.x.background.hover" type="idref" value="scrollBarTrackXBackgroundHover"/>
+
+      <object class="java.lang.String" id="scrollBarTrackYBackground">
+        <string>/org/marketsuite/component/UI/images/scrollBarTrackY.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarTrack.y.background" type="idref" value="scrollBarTrackYBackground"/>
+
+      <object class="java.lang.String" id="scrollBarTrackYBackgroundHover">
+        <string>/org/marketsuite/component/UI/images/scrollBarTrackY_hover8.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.scrollBarTrack.y.background.hover" type="idref" value="scrollBarTrackYBackgroundHover"/>
+
+      <defaultsProperty key="Synthetica.scrollBarTrack.background.insets" type="insets" value="9 9 9 9"/>
+      <defaultsProperty key="Synthetica.scrollBarTrack.hoverAndPressed.enabled" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.scrollBarTrack.hoverOnButtons.enabled" type="boolean" value="true"/>
+
+	  <painter method="scrollBarTrackBackground" idref="syntheticaPainter" />
+    </state>
+
+  </style>
+  <bind style="scrollBarTrack" type="region" key="ScrollBarTrack"/>
+
+
+<!-- 
+*******************************************************************************
+Separator
+*******************************************************************************
+-->
+  <style id="separator">
+    <property key="Separator.thickness" type="integer" value="2"/>
+    <state>
+      <opaque value="false" />
+      <color type="BACKGROUND" value="#E2E2E2" />
+      <object class="java.lang.String" id="separatorX">
+        <string>/org/marketsuite/component/UI/images/separatorX.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.separator.image.x" type="idref" value="separatorX"/>
+
+      <object class="java.lang.String" id="separatorY">
+        <string>/org/marketsuite/component/UI/images/separatorY.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.separator.image.y" type="idref" value="separatorY"/>
+
+      <defaultsProperty key="Synthetica.separator.image.insets" type="insets" value="0 0 0 0"/>
+	  <painter method="separatorForeground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="separator" type="region" key="Separator"/>
+
+
+<!-- 
+*******************************************************************************
+Slider
+*******************************************************************************
+-->
+  <style id="slider">
+    <insets top="4" left="6" bottom="6" right="6"/>
+    <property key="Slider.thumbWidth" type="integer" value="18"/>
+    <property key="Slider.thumbHeight" type="integer" value="18"/>
+    <property key="Slider.trackBorder" type="integer" value="-5"/>
+    <property key="Slider.paintValue" type="boolean" value="false"/>
+
+    <state>
+      <defaultsProperty key="Synthetica.slider.hoverAndPressed.enabled" type="boolean" value="true"/>
+    </state>  
+
+    <state value="FOCUSED">
+	  <painter method="sliderBorder" idref="syntheticaPainter" />
+    </state>
+
+  </style>
+  <bind style="slider" type="region" key="Slider"/>
+
+  <style id="sliderTrack">
+    <state>
+      <object class="java.lang.String" id="sliderTrackX">
+        <string>/org/marketsuite/component/UI/images/sliderTrackX.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.track.x.image" type="idref" value="sliderTrackX"/>
+      <defaultsProperty key="Synthetica.slider.track.x.image.insets" type="insets" value="4 4 3 4"/>
+
+      <object class="java.lang.String" id="sliderTrackY">
+        <string>/org/marketsuite/component/UI/images/sliderTrackY.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.track.y.image" type="idref" value="sliderTrackY"/>
+      <defaultsProperty key="Synthetica.slider.track.y.image.insets" type="insets" value="4 4 4 3"/>
+
+      <painter method="sliderTrackBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="MOUSE_OVER">
+      <object class="java.lang.String" id="sliderTrackX">
+        <string>/org/marketsuite/component/UI/images/sliderTrackX_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.track.x.hover.image" type="idref" value="sliderTrackX"/>
+      <defaultsProperty key="Synthetica.slider.track.x.pressed.image" type="idref" value="sliderTrackX"/>
+
+      <object class="java.lang.String" id="sliderTrackY">
+        <string>/org/marketsuite/component/UI/images/sliderTrackY_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.track.y.hover.image" type="idref" value="sliderTrackY"/>
+      <defaultsProperty key="Synthetica.slider.track.y.pressed.image" type="idref" value="sliderTrackY"/>
+
+      <painter method="sliderTrackBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+      <object class="java.lang.String" id="sliderTrackX">
+        <string>/org/marketsuite/component/UI/images/sliderTrackX_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.track.x.disabled.image" type="idref" value="sliderTrackX"/>
+
+      <object class="java.lang.String" id="sliderTrackY">
+        <string>/org/marketsuite/component/UI/images/sliderTrackY_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.track.y.disabled.image" type="idref" value="sliderTrackY"/>
+
+      <painter method="sliderTrackBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="sliderTrack" type="region" key="SliderTrack"/>
+
+  <style id="sliderThumb">
+    <state>
+      <object class="java.lang.String" id="sliderThumbX">
+        <string>/org/marketsuite/component/UI/images/sliderThumbX.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.thumb.x.image" type="idref" value="sliderThumbX"/>
+      <defaultsProperty key="Synthetica.slider.thumb.x.image.insets" type="insets" value="0 0 0 0"/>
+
+      <object class="java.lang.String" id="sliderThumbY">
+        <string>/org/marketsuite/component/UI/images/sliderThumbY.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.thumb.y.image" type="idref" value="sliderThumbY"/>
+      <defaultsProperty key="Synthetica.slider.thumb.y.image.insets" type="insets" value="0 0 0 0"/>
+
+      <painter method="sliderThumbBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="MOUSE_OVER">
+      <object class="java.lang.String" id="sliderThumbX">
+        <string>/org/marketsuite/component/UI/images/sliderThumbX_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.thumb.x.hover.image" type="idref" value="sliderThumbX"/>
+
+      <object class="java.lang.String" id="sliderThumbY">
+        <string>/org/marketsuite/component/UI/images/sliderThumbY_hover4.png,</string>
+      </object>
+      <defaultsProperty key="Synthetica.slider.thumb.y.hover.image" type="idref" value="sliderThumbY"/>
+
+      <painter method="sliderThumbBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+      <imagePainter method="sliderThumbBackground" path="/org/marketsuite/component/UI/images/sliderThumbX_disabled.png" direction="horizontal"
+                    sourceInsets="0 0 0 0" paintCenter="true" stretch="false"/>
+      <imagePainter method="sliderThumbBackground" path="/org/marketsuite/component/UI/images/sliderThumbY_disabled.png" direction="vertical"
+                    sourceInsets="0 0 0 0" paintCenter="true" stretch="false"/>
+    </state>
+  </style>
+  <bind style="sliderThumb" type="region" key="SliderThumb"/>
+
+
+<!-- 
+*******************************************************************************
+SplitPane
+*******************************************************************************
+-->
+  <style id="splitPane">
+    <property key="SplitPane.size" type="integer" value="5"/>
+    <property key="SplitPane.oneTouchButtonSize" type="integer" value="20"/>
+    <property key="SplitPane.oneTouchButtonOffset" type="integer" value="0"/>
+    <property key="SplitPane.oneTouchExpandable" type="boolean" value="true"/>
+    <property key="SplitPane.centerOneTouchButtons" type="boolean" value="true"/>
+    <defaultsProperty key="Syntetica.splitPane.centerOneTouchButtons" type="boolean" value="true"/>
+    <state>
+      <opaque value="false"/>
+      <color type="BACKGROUND" value="#EFEFEF" />
+    </state>
+  </style>
+  <bind style="splitPane" type="region" key="SplitPane"/>
+
+  <style id="splitPaneDivider">
+    <state>
+      <opaque value="true"/>
+      <color type="BACKGROUND" value="#c0c8c0" />
+      
+   <!--
+      <imagePainter method="splitPaneDragDivider" path="/org/marketsuite/component/UI/images/splitPaneDragDivider.png" direction="horizontal_split"
+                      sourceInsets="0 0 0 0" paintCenter="true" stretch="false"/>
+      <imagePainter method="splitPaneDragDivider" path="/org/marketsuite/component/UI/images/splitPaneDragDivider.png" direction="vertical_split"
+                      sourceInsets="0 0 0 0" paintCenter="true" stretch="false"/>
+	-->
+      <object class="java.lang.String" id="splitPaneDividerXGrip">
+        <string>/org/marketsuite/component/UI/images/splitPaneDividerGripX.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.splitPaneDivider.x.grip" type="idref" value="splitPaneDividerXGrip"/>
+
+      <object class="java.lang.String" id="splitPaneDividerXGripHover">
+        <string>/org/marketsuite/component/UI/images/splitPaneDividerGripX_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.splitPaneDivider.x.grip.hover" type="idref" value="splitPaneDividerXGripHover"/>
+
+      <object class="java.lang.String" id="splitPaneDividerYGrip">
+        <string>/org/marketsuite/component/UI/images/splitPaneDividerGripY.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.splitPaneDivider.y.grip" type="idref" value="splitPaneDividerYGrip"/>
+
+      <object class="java.lang.String" id="splitPaneDividerYGripHover">
+        <string>/org/marketsuite/component/UI/images/splitPaneDividerGripY_hover.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.splitPaneDivider.y.grip.hover" type="idref" value="splitPaneDividerYGripHover"/>
+
+      <defaultsProperty key="Synthetica.splitPaneDivider.background.insets" type="insets" value="2 2 2 2"/>
+
+	  <painter method="splitPaneDividerForeground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="splitPaneDivider" type="region" key="SplitPaneDivider"/>
+
+<!-- 
+*******************************************************************************
+StatusBar
+*******************************************************************************
+-->
+  <object class="java.lang.String" id="statusBarBackground">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/statusBar.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.statusBar.background" type="idref" value="statusBarBackground"/>
+  <defaultsProperty key="Synthetica.statusBar.background.insets" type="insets" value="3 0 15 15"/>
+
+  <object class="java.lang.String" id="statusBarBackgroundLight">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/statusBar_.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.statusBar.background.light" type="idref" value="statusBarBackgroundLight"/>
+
+  <object class="java.lang.String" id="statusBarSeparatorY">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/statusBarSeparatorY.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.separator.statusBar.image.y" type="idref" value="statusBarSeparatorY"/>
+  <defaultsProperty key="Synthetica.separator.statusBar.image.insets" type="insets" value="0 0 0 0"/>
+
+  <defaultsProperty key="Synthetica.statusBar.background.horizontalTiled" type="boolean" value="true"/>
+  <defaultsProperty key="Synthetica.statusBar.background.verticalTiled" type="boolean" value="true"/>
+  <defaultsProperty key="Synthetica.statusBar.insets" type="insets" value="4 4 1 15"/>
+
+<!-- 
+*******************************************************************************
+TabbedPane
+*******************************************************************************
+-->
+  <style id="tabbedPane">
+    <insets top="0" left="0" bottom="0" right="0"/>
+    <state>
+      <color type="FOREGROUND" value="#333333"/>
+    </state>
+  </style>
+  <bind style="tabbedPane" type="region" key="TabbedPane"/>
+
+  <style id="tabbedPaneContent">
+    <insets top="3" left="3" bottom="3" right="3"/>
+    <state>
+      <opaque value="true"/>
+      <color type="BACKGROUND" value="#EFEFEF"/>
+      <object class="java.lang.String" id="tabbedPaneContentBorderImage">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneContentBorder.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.contentBorder.image" type="idref" value="tabbedPaneContentBorderImage"/>
+      <defaultsProperty key="Synthetica.tabbedPane.contentBorder.image.sourceInsets" type="insets" value="2 2 2 2"/>
+	  <painter method="tabbedPaneContentBorder" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="tabbedPaneContent" type="region" key="TabbedPaneContent"/>
+
+  <style id="tabbedPaneTabArea">
+    <insets top="2" left="6" bottom="0" right="6"/>
+    <state>
+      <object class="java.lang.String" id="tabbedPaneTabAreaBackgroundTop">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTabAreaBackgroundTop.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tabArea.background.image.top" type="idref" value="tabbedPaneTabAreaBackgroundTop"/>
+      <defaultsProperty key="Synthetica.tabbedPane.tabArea.background.image.top.insets" type="insets" value="1 0 0 0"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabAreaBackgroundLeft">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTabAreaBackgroundLeft.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tabArea.background.image.left" type="idref" value="tabbedPaneTabAreaBackgroundLeft"/>
+      <defaultsProperty key="Synthetica.tabbedPane.tabArea.background.image.left.insets" type="insets" value="0 1 0 0"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabAreaBackgroundBottom">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTabAreaBackgroundBottom.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tabArea.background.image.bottom" type="idref" value="tabbedPaneTabAreaBackgroundBottom"/>
+      <defaultsProperty key="Synthetica.tabbedPane.tabArea.background.image.bottom.insets" type="insets" value="0 0 1 0"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabAreaBackgroundRight">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTabAreaBackgroundRight.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tabArea.background.image.right" type="idref" value="tabbedPaneTabAreaBackgroundRight"/>
+      <defaultsProperty key="Synthetica.tabbedPane.tabArea.background.image.right.insets" type="insets" value="0 0 0 1"/>
+
+	  <painter method="tabbedPaneTabAreaBackground" idref="syntheticaPainter" />
+	  <painter method="tabbedPaneTabAreaBorder" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="tabbedPaneTabArea" type="region" key="TabbedPaneTabArea"/>
+
+  <style id="tabbedPaneTab">
+    <insets top="2" left="10" bottom="2" right="10"/>
+    <defaultsProperty key="Synthetica.tabbedPane.tab.selected.bold" type="boolean" value="true"/>
+	<font name="tahoma" size="14" style="bold"/>
+	
+    <state>
+      <object class="java.lang.String" id="tabbedPaneTabTop">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.top" type="idref" value="tabbedPaneTabTop"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabBottom">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTabBottom.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.bottom" type="idref" value="tabbedPaneTabBottom"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabLeft">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.left" type="idref" value="tabbedPaneTabLeft"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabRight">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.right" type="idref" value="tabbedPaneTabRight"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabTopHover">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.hover.top" type="idref" value="tabbedPaneTabTopHover"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabBottomHover">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTabBottom_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.hover.bottom" type="idref" value="tabbedPaneTabBottomHover"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabLeftHover">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.hover.left" type="idref" value="tabbedPaneTabLeftHover"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabRightHover">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.hover.right" type="idref" value="tabbedPaneTabRightHover"/>
+
+      <defaultsProperty key="Synthetica.tabbedPane.tab.insets" type="insets" value="4 4 4 4"/>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.noneSelected.background.insets" type="insets" value="0 0 0 0"/>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.text.insets" type="insets" value="0 0 0 0"/>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.icon.insets" type="insets" value="0 0 0 0"/>
+
+	  <painter method="tabbedPaneTabBackground" idref="syntheticaPainter" />
+    </state>
+
+<!-- 
+    <state value="FOCUSED">
+      <color type="TEXT_FOREGROUND" value="#CFC6B8"/>
+	  <color type="TEXT_BACKGROUND" value="#0B0C0C"/>
+	  <painter method="tabbedPaneTabBackground" idref="syntheticaPainter" />
+    </state>
+ -->
+ 
+    <state value="SELECTED">
+      <color type="TEXT_FOREGROUND" value="#000000"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabTop">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.selected.top" type="idref" value="tabbedPaneTabTop"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabBottom">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTabBottom_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.selected.bottom" type="idref" value="tabbedPaneTabBottom"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabLeft">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.selected.left" type="idref" value="tabbedPaneTabLeft"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabRight">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.selected.right" type="idref" value="tabbedPaneTabRight"/>
+
+      <defaultsProperty key="Synthetica.tabbedPane.tab.selected.insets" type="insets" value="4 4 4 4"/>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.selected.text.insets" type="insets" value="2 0 2 0"/>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.selected.icon.insets" type="insets" value="2 0 2 0"/>
+
+	  <painter method="tabbedPaneTabBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+	  <color type="TEXT_FOREGROUND" value="#7F7F7F"/>
+      <object class="java.lang.String" id="tabbedPaneTabTop">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.disabled.top" type="idref" value="tabbedPaneTabTop"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabBottom">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTabBottom.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.disabled.bottom" type="idref" value="tabbedPaneTabBottom"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabLeft">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.disabled.left" type="idref" value="tabbedPaneTabLeft"/>
+
+      <object class="java.lang.String" id="tabbedPaneTabRight">
+        <string>/org/marketsuite/component/UI/images/tabbedPaneTab.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.tabbedPane.tab.disabled.right" type="idref" value="tabbedPaneTabRight"/>
+
+      <defaultsProperty key="Synthetica.tabbedPane.tab.disabled.insets" type="insets" value="4 4 4 4"/>
+
+	  <painter method="tabbedPaneTabBackground" idref="syntheticaPainter" />
+    </state>
+
+  </style>
+  <bind style="tabbedPaneTab" type="region" key="TabbedPaneTab"/>
+
+
+<!-- 
+*******************************************************************************
+Table
+*******************************************************************************
+-->
+  <style id="table">
+    <state>
+      <insets top="3" left="3" bottom="3" right="3"/>
+      <property key="Table.rendererUseUIBorder" type="boolean" value="true"/>
+      <color type="BACKGROUND" value="#FFFFFF" />
+      <color type="FOREGROUND" value="#333333" />
+
+      <object class="javax.swing.plaf.ColorUIResource" id="hlBorderColor">
+        <!-- #A8BDB0 -->
+        <int>168</int>
+        <int>189</int>
+        <int>176</int>
+      </object>
+      <defaultsProperty key="Synthetica.table.focusCellHighlightBorder.color" type="idref" value="hlBorderColor" />
+
+      <object class="javax.swing.plaf.ColorUIResource" id="scrollPaneBorderColor">
+        <!-- #C0C3C2 -->
+        <int>192</int>
+        <int>195</int>
+        <int>194</int>
+      </object>
+      <defaultsProperty key="Synthetica.table.scrollPane.border.color" type="idref" value="scrollPaneBorderColor" />
+
+      <object class="javax.swing.plaf.ColorUIResource" id="gridColor">
+        <!-- FDFDFD -->
+        <int>253</int>
+        <int>253</int>
+        <int>253</int>
+      </object>
+      <property key="Table.gridColor" type="idref" value="gridColor"/>
+
+      <object class="java.lang.String" id="tableBorder">
+        <string>/org/marketsuite/component/UI/images/border.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.table.border" type="idref" value="tableBorder"/>
+      <defaultsProperty key="Synthetica.table.border.insets" type="insets" value="4 4 4 4"/>
+
+	  <painter method="tableBorder" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">
+    <!-- 
+      <color type="TEXT_BACKGROUND" value="#CCF0FF" />
+ -->
+       <color type="TEXT_BACKGROUND" value="#3DB4BE" />
+      <color type="TEXT_FOREGROUND" value="#333333" />
+    </state>    
+  </style>
+  <bind style="table" type="region" key="Table"/>
+
+  <style id="">
+    <state>
+      <font name="Tahoma" size="11" style="BOLD"/>
+      <color type="FOREGROUND" value="#333333" /> 
+      <color type="BACKGROUND" value="#A6EFFF" />
+
+      <object class="javax.swing.plaf.ColorUIResource" id="gridColor">
+        <!-- #AAAAAA -->
+        <int>170</int>
+        <int>170</int>
+        <int>170</int>
+      </object>
+      <defaultsProperty key="Synthetica..gridColor" type="idref" value="gridColor"/>
+
+      <imagePainter method="Background" path="/org/marketsuite/component/UI/images/Background.png"
+                    sourceInsets="0 0 2 0" destinationInsets="0 0 2 0" paintCenter="true" stretch="true"/>
+    </state>
+  </style>
+  <bind style="" type="region" key=""/>
+  <!-- avoids plain header text with Java SE 6 on MOUSE_OVER -->
+  <bind style="" type="name" key=".renderer"/>
+
+
+<!-- 
+*******************************************************************************
+TaskPane
+*******************************************************************************
+-->
+  <object class="java.lang.String" id="taskPaneContainerBackground">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneContainer.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.container.background" type="idref" value="taskPaneContainerBackground"/>
+  <defaultsProperty key="Synthetica.taskPane.container.background.insets" type="insets" value="300 300 0 0"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="taskPaneContainerColor">
+    <!-- #00C5F2 -->
+    <int>0</int>
+    <int>197</int>
+    <int>242</int>
+  </object>
+  <defaultsProperty key="TaskPaneContainer.background" type="idref" value="taskPaneContainerColor"/>
+
+  <defaultsProperty key="TaskPaneContainer.useGradient" type="boolean" value="TRUE"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="taskPaneContainerGradientStart">
+    <!-- #3FD3FC -->
+    <int>63</int>
+    <int>211</int>
+    <int>252</int>
+  </object>
+  <defaultsProperty key="TaskPaneContainer.backgroundGradientStart" type="idref" value="taskPaneContainerGradientStart"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="taskPaneContainerGradientEnd">
+    <!-- #00C5F2 -->
+    <int>0</int>
+    <int>197</int>
+    <int>242</int>
+  </object>
+  <defaultsProperty key="TaskPaneContainer.backgroundGradientEnd" type="idref" value="taskPaneContainerGradientEnd"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="taskPaneBorderColor">
+    <!-- #808080 -->
+    <int>128</int>
+    <int>128</int>
+    <int>128</int>
+  </object>
+  <defaultsProperty key="TaskPane.borderColor" type="idref" value="taskPaneBorderColor"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="taskPaneBackground">
+    <!-- #EFEFEF -->
+    <int>239</int>
+    <int>239</int>
+    <int>239</int>
+  </object>
+  <defaultsProperty key="TaskPane.background" type="idref" value="taskPaneBackground"/>
+
+  <!-- ******************** TaskPane Title ****************** -->
+
+  <object class="java.lang.String" id="taskPaneTitleBackground">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPane.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.title.background" type="idref" value="taskPaneTitleBackground"/>
+  <defaultsProperty key="Synthetica.taskPane.title.background.insets" type="insets" value="4 4 4 4"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="taskPaneTitleForeground">
+    <!-- #333333 -->
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+  </object>
+  <defaultsProperty key="TaskPane.titleForeground" type="idref" value="taskPaneTitleForeground"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="taskPaneTitleOver">
+    <!-- #707070 -->
+    <int>112</int>
+    <int>112</int>
+    <int>112</int>
+  </object>
+  <defaultsProperty key="TaskPane.titleOver" type="idref" value="taskPaneTitleOver"/>
+
+  <object class="java.lang.String" id="taskPaneIcon">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneIcon.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.icon" type="idref" value="taskPaneIcon"/>
+  <defaultsProperty key="Synthetica.taskPane.icon.insets" type="insets" value="0 0 0 0"/>
+
+  <object class="java.lang.String" id="taskPaneIconHover">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneIcon_hover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.icon.hover" type="idref" value="taskPaneIconHover"/>
+
+  <object class="java.lang.String" id="taskPaneIconExpanded">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneIcon_selected.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.icon.expanded" type="idref" value="taskPaneIconExpanded"/>
+
+  <object class="java.lang.String" id="taskPaneIconExpandedHover">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneIcon_selectedAndHover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.icon.expanded.hover" type="idref" value="taskPaneIconExpandedHover"/>
+
+  <!-- ******************** TaskPane Title Special ****************** -->
+
+  <object class="java.lang.String" id="taskPaneSpecialTitleBackground">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneSpecial.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.title.background.special" type="idref" value="taskPaneSpecialTitleBackground"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="taskPaneSpecialTitleForeground">
+    <!-- #0C4A7C -->
+    <int>12</int>
+    <int>74</int>
+    <int>124</int>
+  </object>
+  <defaultsProperty key="TaskPane.specialTitleForeground" type="idref" value="taskPaneSpecialTitleForeground"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="taskPaneSpecialTitleOver">
+    <!-- #007099 -->
+    <int>0</int>
+    <int>112</int>
+    <int>153</int>
+  </object>
+  <defaultsProperty key="TaskPane.specialTitleOver" type="idref" value="taskPaneSpecialTitleOver"/>
+
+  <object class="java.lang.String" id="taskPaneIconSpecial">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneIconSpecial.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.icon.special" type="idref" value="taskPaneIconSpecial"/>
+
+  <object class="java.lang.String" id="taskPaneIconSpecialHover">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneIconSpecial_hover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.icon.special.hover" type="idref" value="taskPaneIconSpecialHover"/>
+
+  <object class="java.lang.String" id="taskPaneIconExpandedSpecial">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneIconSpecial_selected.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.icon.expanded.special" type="idref" value="taskPaneIconExpandedSpecial"/>
+
+  <object class="java.lang.String" id="taskPaneIconExpandedSpecialHover">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/taskPaneIconSpecial_selectedAndHover.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.taskPane.icon.expanded.special.hover" type="idref" value="taskPaneIconExpandedSpecialHover"/>
+
+
+<!-- 
+*******************************************************************************
+TextArea
+*******************************************************************************
+-->
+  <style id="textArea">
+    <state>
+      <color value="#FFFFFF" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="lockedColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.textArea.lockedColor" type="idref" value="lockedColor"/>
+      <defaultsProperty key="Synthetica.textArea.border.opaqueBackground" type="boolean" value="false"/>
+      <defaultsProperty key="Synthetica.textArea.border.disabled.opaqueBackground" type="boolean" value="false"/>
+      <defaultsProperty key="Synthetica.textArea.border.locked.opaqueBackground" type="boolean" value="false"/>
+
+      <object class="java.lang.String" id="textAreaBorderLocked">
+        <string>/org/marketsuite/component/UI/images/border_locked_.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.textArea.border.locked" type="idref" value="textAreaBorderLocked"/>
+
+	  <painter method="textAreaBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">
+    <!-- 
+      <color type="TEXT_BACKGROUND" value="#CCF0FF" />
+ -->
+       <color type="TEXT_BACKGROUND" value="#3DB4BE" />
+      <color type="TEXT_FOREGROUND" value="#333333" /> 
+  	</state>
+
+    <state value="DISABLED">
+      <color value="#F3F3F3" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="disabledColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.textArea.disabledColor" type="idref" value="disabledColor"/>
+	  <painter method="textAreaBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="textArea" type="region" key="TextArea"/>
+
+
+<!-- 
+*******************************************************************************
+TextField
+*******************************************************************************
+-->
+  <style id="textField">
+    <insets top="3" left="3" bottom="3" right="3"/>
+
+    <state>
+      <color value="#FFFFFF" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="lockedColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.textField.lockedColor" type="idref" value="lockedColor"/>
+      
+      <object class="java.lang.String" id="textFieldBorder">
+        <string>/org/marketsuite/component/UI/images/border.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.textField.border" type="idref" value="textFieldBorder"/>
+      <defaultsProperty key="Synthetica.textField.border.insets" type="insets" value="3 3 3 3"/>
+      <defaultsProperty key="Synthetica.textField.border.opaqueBackground" type="boolean" value="true"/>
+      <defaultsProperty key="Synthetica.textField.border.disabled.opaqueBackground" type="boolean" value="true"/>
+
+      <object class="java.lang.String" id="textFieldBorderLocked">
+        <string>/org/marketsuite/component/UI/images/border_locked.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.textField.border.locked" type="idref" value="textFieldBorderLocked"/>
+
+	  <painter method="textFieldBackground" idref="syntheticaPainter" />
+	  <painter method="textFieldBorder" idref="syntheticaPainter" />	  
+    </state>
+
+    <state value="SELECTED">
+    <!-- 
+      <color type="TEXT_BACKGROUND" value="#CCF0FF" />
+ -->
+       <color type="TEXT_BACKGROUND" value="#3DB4BE" />
+      <color type="TEXT_FOREGROUND" value="#333333" /> 
+  	</state>
+
+    <state value="DISABLED">
+      <color value="#F3F3F3" type="BACKGROUND"/>
+      <object class="java.lang.String" id="textFieldBorderDisabled">
+        <string>/org/marketsuite/component/UI/images/border_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.textField.border.disabled" type="idref" value="textFieldBorderDisabled"/>
+      <painter method="textFieldBackground" idref="syntheticaPainter" />
+	  <painter method="textFieldBorder" idref="syntheticaPainter" />	  
+    </state>
+  </style>
+  <bind style="textField" type="region" key="TextField"/>
+
+
+<!-- 
+*******************************************************************************
+TextPane
+*******************************************************************************
+-->
+  <style id="textPane">
+    <state>
+      <color value="#FFFFFF" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="lockedColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.textPane.lockedColor" type="idref" value="lockedColor"/>
+      <defaultsProperty key="Synthetica.textPane.border.opaqueBackground" type="boolean" value="false"/>
+      <defaultsProperty key="Synthetica.textPane.border.disabled.opaqueBackground" type="boolean" value="false"/>
+      <defaultsProperty key="Synthetica.textPane.border.locked.opaqueBackground" type="boolean" value="false"/>
+
+      <object class="java.lang.String" id="textPaneBorderLocked">
+        <string>/org/marketsuite/component/UI/images/border_locked_.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.textPane.border.locked" type="idref" value="textPaneBorderLocked"/>
+
+	  <painter method="textPaneBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">
+   <!-- 
+      <color type="TEXT_BACKGROUND" value="#CCF0FF" />
+ -->
+       <color type="TEXT_BACKGROUND" value="#3DB4BE" />
+      <color type="TEXT_FOREGROUND" value="#333333" /> 
+  	</state>
+
+    <state value="DISABLED">
+      <color value="#F3F3F3" type="BACKGROUND"/>
+      <object class="javax.swing.plaf.ColorUIResource" id="disabledColor">
+        <!-- #F3F3F3 -->
+        <int>243</int>
+        <int>243</int>
+        <int>243</int>
+      </object>
+      <defaultsProperty key="Synthetica.textPane.disabledColor" type="idref" value="disabledColor"/>
+	  <painter method="textPaneBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="textPane" type="region" key="TextPane"/>
+
+
+<!--
+*******************************************************************************
+TipOfTheDay
+*******************************************************************************
+-->
+  <object class="java.lang.String" id="tipOfTheDayIcon">
+    <string>standard/images/tipOfTheDay.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.tipOfTheDay.icon" type="idref" value="tipOfTheDayIcon"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="tipOfTheDayBackground">
+    <!-- #808080 -->
+    <int>128</int>
+    <int>128</int>
+    <int>128</int>
+  </object>
+  <defaultsProperty key="TipOfTheDay.background" type="idref" value="tipOfTheDayBackground"/>
+
+
+<!--
+*******************************************************************************
+TitledPanel
+*******************************************************************************
+-->
+  <defaultsProperty key="Synthetica.titledPanel.dropShadow.enabled" type="boolean" value="true"/>
+  <defaultsProperty key="Synthetica.titledPanel.dropShadow.distance" type="integer" value="-8"/>
+  <defaultsProperty key="Synthetica.titledPanel.dropShadow.highQuality" type="boolean" value="false"/>
+  <object class="javax.swing.plaf.ColorUIResource" id="dropShadowColor">
+    <!-- #FFFFFF -->
+    <int>255</int>
+    <int>255</int>
+    <int>255</int>
+  </object>
+  <defaultsProperty key="Synthetica.titledPanel.dropShadow.color" type="idref" value="dropShadowColor"/>
+
+  <object class="java.lang.String" id="titledPanelTitleBackground">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/titledPanelTitleBackground.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.titledPanel.title.background" type="idref" value="titledPanelTitleBackground"/>
+  <defaultsProperty key="Synthetica.titledPanel.title.background.insets" type="insets" value="6 6 0 9"/>
+
+  <object class="java.lang.String" id="titledPanelBorder">
+    <string>/de/javasoft/plaf/synthetica/whitevision/images/titledPanelBorder.png</string>
+  </object>
+  <defaultsProperty key="Synthetica.titledPanel.border" type="idref" value="titledPanelBorder"/>
+  <defaultsProperty key="Synthetica.titledPanel.border.insets" type="insets" value="0 6 9 9"/>
+  <defaultsProperty key="Synthetica.titledPanel.title.insets" type="insets" value="0 6 4 6"/>
+
+  <object class="javax.swing.plaf.ColorUIResource" id="titledPanelForeground">
+    <!-- #333333 -->
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+  </object>
+  <defaultsProperty key="JXTitledPanel.title.foreground" type="idref" value="titledPanelForeground"/>
+
+
+<!--
+*******************************************************************************
+ToggleButton
+*******************************************************************************
+-->
+  <style id="toggleButton">
+    <insets top="7" left="5" bottom="5" right="5"/>
+    <property key="ToggleButton.margin" type="insets" value="0 0 0 0"/>
+    <property key="ToggleButton.textShiftOffset" type="integer" value="1"/>
+
+    <state>
+      <font name="Tahoma" size="11" style="BOLD"/>
+      <color type="FOREGROUND" value="#000000" /> 
+      <defaultsProperty key="Synthetica.toggleButton.border.insets" type="insets" value="5 5 5 5"/>
+
+      <object class="java.lang.String" id="buttonBorder">
+        <string>/org/marketsuite/component/UI/images/button.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toggleButton.border" type="idref" value="buttonBorder"/>
+
+      <object class="java.lang.String" id="buttonBorderSelected">
+        <string>/org/marketsuite/component/UI/images/button_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toggleButton.border.selected" type="idref" value="buttonBorderSelected"/>
+
+      <object class="java.lang.String" id="buttonBorderHover">
+        <string>/org/marketsuite/component/UI/images/button_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toggleButton.border.hover" type="idref" value="buttonBorderHover"/>
+
+      <object class="java.lang.String" id="buttonBorderSelectedHover">
+        <string>/org/marketsuite/component/UI/images/button_selectedHover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toggleButton.border.selected.hover" type="idref" value="buttonBorderSelectedHover"/>
+
+      <object class="java.lang.String" id="buttonBorderDisabled">
+        <string>/org/marketsuite/component/UI/images/button_disabled.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toggleButton.border.disabled" type="idref" value="buttonBorderDisabled"/>
+
+	  <painter method="toggleButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="MOUSE_OVER">
+	  <painter method="toggleButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="FOCUSED">
+	  <painter method="toggleButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED">
+	  <painter method="toggleButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="SELECTED AND MOUSE_OVER">
+	  <painter method="toggleButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+	  <painter method="toggleButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="FOCUSED AND SELECTED">
+	  <painter method="toggleButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="FOCUSED AND MOUSE_OVER">
+	  <painter method="toggleButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="FOCUSED AND SELECTED AND MOUSE_OVER">
+	  <painter method="toggleButtonBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED AND SELECTED">
+  	  <color type="TEXT_FOREGROUND" value="#C0C0C0" /> 
+	  <imagePainter method="toggleButtonBackground" path="/org/marketsuite/component/UI/images/button_disabledPressed.png"
+                    sourceInsets="4 4 4 4" paintCenter="true" stretch="true"/>
+    </state>
+
+  </style>
+  <bind style="toggleButton" type="region" key="ToggleButton"/>
+
+
+<!-- 
+*******************************************************************************
+ToolBar
+*******************************************************************************
+-->
+  <style id="toolBar">
+    <object class="de.javasoft.plaf.synthetica.painter.ToolBarHandle" id="toolBarHandle" />
+    <property key="ToolBar.handleIcon" type="idref" value="toolBarHandle"/>
+    <object class="java.lang.String" id="toolBarHandleX">
+      <string>/org/marketsuite/component/UI/images/toolBarHandleX.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.toolBar.handle.image.x" type="idref" value="toolBarHandleX"/>
+    <object class="java.lang.String" id="toolBarHandleY">
+      <string>/org/marketsuite/component/UI/images/toolBarHandleY.png</string>
+    </object>
+    <defaultsProperty key="Synthetica.toolBar.handle.image.y" type="idref" value="toolBarHandleY"/>
+    <defaultsProperty key="Synthetica.toolBar.handle.image.insets" type="insets" value="0 0 0 0"/>
+    <defaultsProperty key="Synthetica.toolBar.handle.size" type="integer" value="9"/>
+
+    <defaultsProperty key="Synthetica.toolBar.button.pressed.paintBorder" type="boolean" value="true"/>
+    <defaultsProperty key="Synthetica.toolBar.buttons.paintBorder" type="boolean" value="false"/>
+    <defaultsProperty key="Synthetica.toolBar.margin.horizontal" type="insets" value="3 0 2 0"/>
+    <defaultsProperty key="Synthetica.toolBar.margin.vertical" type="insets" value="3 2 0 2"/>
+
+    <object class="java.lang.String" id="toolBarButtonFontStyle">
+      <string>PLAIN</string>
+    </object>
+    <defaultsProperty key="Synthetica.toolBar.button.font.style" type="idref" value="toolBarButtonFontStyle"/>  
+    <!-- <defaultsProperty key="Synthetica.toolBar.button.font.size" type="integer" value="10"/> -->
+
+    <object class="java.lang.String" id="toolBarToggleButtonFontStyle">
+      <string>PLAIN</string>
+    </object>
+    <defaultsProperty key="Synthetica.toolBar.toggleButton.font.style" type="idref" value="toolBarToggleButtonFontStyle"/>  
+
+    <state>
+      <color type="BACKGROUND" value="#EFEFEF" />
+      <color type="FOREGROUND" value="#05F4F4" />
+
+      <object class="java.lang.String" id="toolBarBackground">
+        <string>/org/marketsuite/component/UI/images/toolBar.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toolBar.background" type="idref" value="toolBarBackground"/>
+      <defaultsProperty key="Synthetica.toolBar.background.insets" type="insets" value="2 8 0 8"/>
+
+      <object class="java.lang.String" id="buttonBorder">
+        <string>/org/marketsuite/component/UI/images/dummy.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toolBar.button.border" type="idref" value="buttonBorder"/>
+
+      <object class="java.lang.String" id="buttonBorder">
+        <string>/org/marketsuite/component/UI/images/button_hover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toolBar.button.border.hover" type="idref" value="buttonBorder"/>
+
+      <object class="java.lang.String" id="buttonBorder">
+        <string>/org/marketsuite/component/UI/images/button_pressed.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toolBar.button.border.pressed" type="idref" value="buttonBorder"/>
+
+      <object class="java.lang.String" id="buttonBorderSelected">
+        <string>/org/marketsuite/component/UI/images/button_selected.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toolBar.toggleButton.border.selected" type="idref" value="buttonBorderSelected"/>
+
+      <object class="java.lang.String" id="buttonBorderSelectedAndHover">
+        <string>/org/marketsuite/component/UI/images/button_selectedHover4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toolBar.toggleButton.border.selectedAndHover" type="idref" value="buttonBorderSelectedAndHover"/>
+
+	  <painter method="toolBarBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="toolBar" type="region" key="ToolBar"/>
+
+  <style id="toolBarSeparator">
+    <property key="ToolBar.separatorSize" type="dimension" value="1 1"/>
+
+    <state>
+      <opaque value="false"/>
+      <color type="BACKGROUND" value="#808080" />
+
+      <!-- horizontal separator / vertical toolbar -->
+      <object class="java.lang.String" id="toolBarSeparatorX">
+        <string>/org/marketsuite/component/UI/images/toolBarSeparatorX.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.separator.toolBar.image.x" type="idref" value="toolBarSeparatorX"/>
+
+      <!-- vertical separator / horizontal toolbar -->
+      <object class="java.lang.String" id="toolBarSeparatorY">
+        <string>/org/marketsuite/component/UI/images/toolBarSeparatorY.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.separator.toolBar.image.y" type="idref" value="toolBarSeparatorY"/>
+
+      <defaultsProperty key="Synthetica.separator.toolBar.image.insets" type="insets" value="0 0 0 0"/>
+
+	  <painter method="separatorForeground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="toolBarSeparator" type="region" key="ToolBarSeparator"/>
+
+  <style id="toolBarContent">
+    <state>
+    </state>
+  </style>
+  <bind style="toolBarContent" type="region" key="ToolBarContent"/>
+
+  <style id="toolBarDragWindow">
+    <state>
+      <opaque value="true"/>
+      <color type="BACKGROUND" value="#A5BED9" />
+    </state>
+  </style>
+  <bind style="toolBarDragWindow" type="region" key="ToolBarDragWindow"/>
+
+
+<!-- 
+*******************************************************************************
+ToolTip
+*******************************************************************************
+-->
+  <style id="toolTip">
+    <insets top="3" left="3" bottom="7" right="7"/>
+
+    <state>
+      <object class="java.lang.String" id="toolTipBackground">
+        <string>/org/marketsuite/component/UI/images/toolTipBackground4.png</string>
+      </object>
+      <defaultsProperty key="Synthetica.toolTip.background" type="idref" value="toolTipBackground"/>
+      <defaultsProperty key="Synthetica.toolTip.background.insets" type="insets" value="7 7 7 7"/>
+
+	  <painter method="toolTipBackground" idref="syntheticaPainter" />
+    </state>
+
+    <state value="DISABLED">
+	  <painter method="toolTipBackground" idref="syntheticaPainter" />
+    </state>
+  </style>
+  <bind style="toolTip" type="region" key="ToolTip"/>
+
+
+<!-- 
+*******************************************************************************
+Tree
+*******************************************************************************
+-->
+  <style id="tree">
+    <imageIcon id="treeExpandedIcon" path="standard/images/treeExpandedIcon.png"/>
+    <imageIcon id="treeCollapsedIcon" path="standard/images/treeCollapsedIcon.png"/>
+    <imageIcon id="treeLeafIcon" path="/org/marketsuite/component/UI/images/treeLeafIcon.png" />
+    <imageIcon id="treeOpenIcon" path="/org/marketsuite/component/UI/images/folderOpenIcon.png" />
+    <imageIcon id="treeClosedIcon" path="/org/marketsuite/component/UI/images/folderClosedIcon.png" />
+
+    <property key="Tree.leftChildIndent" type="integer" value="4"/>
+    <property key="Tree.rightChildIndent" type="integer" value="12"/>
+    <property key="Tree.scrollsHorizontallyAndVertically" type="boolean" value="true"/>
+    <property key="Tree.rowHeight" type="integer" value="-1"/>
+
+    <state>
+      <property key="Tree.expandedIcon" value="treeExpandedIcon"/>
+      <property key="Tree.collapsedIcon" value="treeCollapsedIcon"/>
+      <defaultsProperty key="Tree.leafIcon" type="idref" value="treeLeafIcon"/>
+      <defaultsProperty key="Tree.openIcon" type="idref" value="treeOpenIcon"/>
+      <defaultsProperty key="Tree.closedIcon" type="idref" value="treeClosedIcon"/>
+
+      <!-- 
+      Unfortunately Synth uses the FOREGROUND color for painting lines (BasicKey: "Tree.hash").
+      Thus Synthetica defines default properties for the GraphicUtilsPainter which is
+      responsable for drawing TreeLines.
+      -->
+      <object class="javax.swing.plaf.ColorUIResource" id="horizontalLineColor">
+        <!-- #D0D0D0 -->
+        <int>208</int>
+        <int>208</int>
+        <int>208</int>
+      </object>
+      <defaultsProperty key="Synthetica.tree.line.color.horizontal" type="idref" value="horizontalLineColor"/>
+
+      <object class="javax.swing.plaf.ColorUIResource" id="verticalLineColor">
+        <!-- #D0D0D0 -->
+        <int>208</int>
+        <int>208</int>
+        <int>208</int>
+      </object>
+      <defaultsProperty key="Synthetica.tree.line.color.vertical" type="idref" value="verticalLineColor"/>
+
+      <!-- NONE, SOLID, DASHED -->
+      <object class="java.lang.String" id="lineType">
+        <string>DASHED</string>
+      </object>
+      <defaultsProperty key="Synthetica.tree.line.type" type="idref" value="lineType"/>
+
+      <defaultsProperty key="Synthetica.tree.line.dashed.line" type="integer" value="2"/>
+      <defaultsProperty key="Synthetica.tree.line.dashed.space" type="integer" value="1"/>
+
+	  <painter method="treeBackground" idref="syntheticaPainter" />
+      <opaque value="true"/>
+      <color type="BACKGROUND" value="#FFFFFF" />
+      <!-- Text color can be separately set through "TreeCell-Section" (TEXT_FOREGROUND) -->
+      <color type="FOREGROUND" value="#000000" />
+    </state>
+  </style>
+  <bind style="tree" type="region" key="Tree"/>
+
+  <style id="treeCell">
+    <state>
+      <!-- 
+      <color type="TEXT_FOREGROUND" value="#F00000" /> 
+      -->
+    </state>
+    <state value="SELECTED">
+      <color type="TEXT_FOREGROUND" value="#000000" />
+      <!-- 
+      <color type="TEXT_BACKGROUND" value="#CCF0FF" />
+ -->
+       <color type="TEXT_BACKGROUND" value="#3DB4BE" />
+    </state>
+  </style>
+  <bind style="treeCell" type="region" key="TreeCell"/>
+
+
+<!-- 
+*******************************************************************************
+Viewport
+*******************************************************************************
+-->
+  <style id="viewport">
+    <state>
+    </state>
+  </style>    
+  <bind style="viewport" type="region" key="Viewport"/>
+
+
+</synth>
